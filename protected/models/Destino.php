@@ -61,8 +61,10 @@ class Destino extends CActiveRecord
 	{
 		return array(
 			'id' => 'Identificador único del destino',
-			'nombre' => 'Nombre del destino',
-			'id_tipo_destino' => 'Identificador único del tipo de destino',
+			//'nombre' => 'Nombre del destino',
+			//'id_tipo_destino' => 'Identificador único del tipo de destino',
+			'nombre' => 'Nombre',
+			'id_tipo_destino' => 'Tipo',
 		);
 	}
 
@@ -103,4 +105,13 @@ class Destino extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	/**
+	 * Devuelve una lista con los tipos de destinos
+	 * @return Lista de modelos de vehículos
+	 */
+    public function getListaTipoDestino()
+    {
+		return TipoDestino::model()->findAll();
+    }
 }

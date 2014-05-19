@@ -64,10 +64,10 @@ class Chofer extends CActiveRecord
 	{
 		return array(
 			'id' => 'Identificador único de chofer',
-			'nombre' => 'Nombres y apellidos del chofer',
-			'cedula' => 'Cédula de identidad del chofer',
-			'id_tipo_chofer' => 'Tipo Chofer',
-			'id_estatus_chofer' => 'Estatus Chofer',
+			'nombre' => 'Nombres y apellidos',
+			'cedula' => 'Cédula de identidad',
+			'id_tipo_chofer' => 'Tipo',
+			'id_estatus_chofer' => 'Estatus',
 		);
 	}
 

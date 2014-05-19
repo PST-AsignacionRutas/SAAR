@@ -11,23 +11,23 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
+	<!-- <div class="row">
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->label($model,'nombre'); ?>
 		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>256)); ?>
 	</div>
-
+<!--
 	<div class="row">
 		<?php echo $form->label($model,'id_tipo_destino'); ?>
 		<?php echo $form->textField($model,'id_tipo_destino'); ?>
 	</div>
-
+-->
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

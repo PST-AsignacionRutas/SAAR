@@ -71,7 +71,7 @@ class Vehiculo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Identificador único para el vehículo',
+			/*'id' => 'Identificador único para el vehículo',
 			'numero' => 'Número de identificación del vehículo. ',
 			'placa' => 'Placas identificadoras del vehículo ante el registro de Tránsito Terrestre',
 			'serial_carroceria' => 'Serial de carrocería del vehículo',
@@ -80,7 +80,17 @@ class Vehiculo extends CActiveRecord
 			'n_puestos' => 'Número de puestos para pasajeros del vehículo',
 			'id_tipo_vehiculo' => 'Id Tipo Vehiculo',
 			'id_estatus_vehiculo' => 'Id Estatus Vehiculo',
-			'id_modelo' => 'Id Modelo',
+			'id_modelo' => 'Id Modelo',*/
+			'id' => 'Identificador único para el vehículo',
+			'numero' => 'Número',
+			'placa' => 'Placas',
+			'serial_carroceria' => 'Serial de carrocería',
+			'anio' => 'Año',
+			'color' => 'Color',
+			'n_puestos' => 'Nº de puestos',
+			'id_tipo_vehiculo' => 'Tipo',
+			'id_estatus_vehiculo' => 'Estatus',
+			'id_modelo' => 'Modelo',
 		);
 	}
 
@@ -128,4 +138,31 @@ class Vehiculo extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	/**
+	 * Devuelve una lista de los tipos de vehículos
+	 * @return Lista de tipo de vehículos
+	 */
+	public function getListaTipoVehiculo()
+    {
+		return TipoVehiculo::model()->findAll();
+    }
+    
+    /**
+	 * Devuelve una lista de los estatus de vehículos
+	 * @return Lista de estatus de vehículos
+	 */
+    public function getListaEstatusVehiculo()
+    {
+		return EstatusVehiculo::model()->findAll();
+    }
+    
+    /**
+	 * Devuelve una lista de los modelos de vehículos
+	 * @return Lista de modelos de vehículos
+	 */
+    public function getListaModeloVehiculo()
+    {
+		return VehiculoModelo::model()->findAll();
+    }
 }

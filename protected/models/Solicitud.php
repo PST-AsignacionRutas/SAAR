@@ -68,14 +68,20 @@ class Solicitud extends CActiveRecord
 	{
 		return array(
 			'id' => 'Identificador único de la solicitud',
-			'fecha_salida' => 'Fecha probable de salida según solicitud',
-			'fecha_llegada' => 'Fecha probable de salida según solicitud',
+			//'fecha_salida' => 'Fecha probable de salida según solicitud',
+			'fecha_salida' => 'Fecha y hora de salida',
+			//'fecha_llegada' => 'Fecha probable de llegada según solicitud',
+			'fecha_llegada' => 'Fecha y hora de llegada',
 			'hora_salida' => 'Hora de salida estimada según solicitud',
 			'hora_llegada' => 'Hora de llegada según solicitud',
-			'lugar_encuentro' => 'Lugar de encuentro de los beneficiarios del servicio de ruta para la salida',
-			'id_destino' => 'Cláve foránea de la relación con la tabla destinos',
-			'id_estatus_solicitud' => 'Cláve foránea de la relación con la tabla estatus_solicitud',
-			'solicitante' => 'Nombre de la persona o departamento solicitante',
+			//'lugar_encuentro' => 'Lugar de encuentro de los beneficiarios del servicio de ruta para la salida',
+			'lugar_encuentro' => 'Lugar de encuentro',
+			//'id_destino' => 'Cláve foránea de la relación con la tabla destinos',
+			'id_destino' => 'Destino',
+			//'id_estatus_solicitud' => 'Cláve foránea de la relación con la tabla estatus_solicitud',
+			'id_estatus_solicitud' => 'Estatus',
+			//'solicitante' => 'Nombre de la persona o departamento solicitante',
+			'solicitante' => 'Departamento',
 		);
 	}
 
@@ -122,4 +128,23 @@ class Solicitud extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	/**
+	 * Devuelve una lista con los destinos
+	 * @return Lista de modelos de vehículos
+	 */
+    public function getListaDestino()
+    {
+		return Destino::model()->findAll();
+    }
+    
+    /**
+	 * Devuelve una lista con los estatus de solicitudes
+	 * @return Lista de modelos de vehículos
+	 */
+    public function getListaEstatusSolicitud()
+    {
+		return EstatusSolicitud::model()->findAll();
+    }
+    
 }

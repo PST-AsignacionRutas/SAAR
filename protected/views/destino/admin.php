@@ -47,12 +47,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'template'=>"{items}",
 	'type'=>'striped bordered condensed',
 	'columns'=>array(
-		'id',
+		//'id',
 		'nombre',
-		'id_tipo_destino',
+		//'id_tipo_destino',
 		array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
-            'htmlOptions'=>array('style'=>'width: 50px'),
+            //'htmlOptions'=>array('style'=>'width: 50px'),
         ),
 	),
 )); ?>

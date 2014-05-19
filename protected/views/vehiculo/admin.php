@@ -44,10 +44,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'id'=>'vehiculo-grid',
 	'dataProvider'=>$model->search(),
 	/*'filter'=>$model,*/
-	'template'=>"{items}",
+	//'template'=>"{items}",
 	'type'=>'striped bordered condensed',
 	'columns'=>array(
-		'id',
+		//'id',
 		'numero',
 		'placa',
 		'serial_carroceria',

@@ -11,10 +11,10 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
+	<!-- <div class="row">
 		<?php echo $form->label($model,'id'); ?>
 		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	</div> -->
 
 	<div class="row">
 		<?php echo $form->label($model,'numero'); ?>
@@ -40,12 +40,12 @@
 		<?php echo $form->label($model,'color'); ?>
 		<?php echo $form->textField($model,'color',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
-
+<!--
 	<div class="row">
 		<?php echo $form->label($model,'n_puestos'); ?>
 		<?php echo $form->textField($model,'n_puestos'); ?>
-	</div>
-
+	</div> -->
+<!-- 
 	<div class="row">
 		<?php echo $form->label($model,'id_tipo_vehiculo'); ?>
 		<?php echo $form->textField($model,'id_tipo_vehiculo'); ?>
@@ -60,9 +60,9 @@
 		<?php echo $form->label($model,'id_modelo'); ?>
 		<?php echo $form->textField($model,'id_modelo'); ?>
 	</div>
-
+-->
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

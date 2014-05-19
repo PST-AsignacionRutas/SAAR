@@ -9,28 +9,27 @@
 <?php 
 	$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'destino-form',
+    'type'=>'horizontal',
     'htmlOptions'=>array('class'=>'well'),
 	));
 ?>
 
 	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php //echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'nombre'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model, 'nombre', array('class'=>'span3','maxlength'=>256,
+								'hint'=>'Nombre del destino (requerido)')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_tipo_destino'); ?>
-		<?php echo $form->textField($model,'id_tipo_destino'); ?>
-		<?php echo $form->error($model,'id_tipo_destino'); ?>
-	</div>
+	
+	<?php echo $form->dropDownListRow($model, 'id_tipo_destino',
+								CHtml::listData($model->getListaTipoDestino(),'id','tipo'),
+								array('empty' => 'Seleccione...',
+								'hint'=>'Seleccione el tipo de destino (requerido)')); ?>
+	
 
 	<div class="form-actions">
-		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Guardar'; ?>
+		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Actualizar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
 	</div>

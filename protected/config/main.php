@@ -9,10 +9,11 @@
 // Define a path alias for the Bootstrap extension as it's used internally.
 // In this example we assume that you unzipped the extension under protected/extensions.
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+Yii::setPathOfAlias('timepiker', dirname(__FILE__).'/../extensions/timepiker');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'SAAR',
 	'language'=>'es',
 	'sourceLanguage'=>'en',
 	'defaultController'=>'site/login',
@@ -24,6 +25,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'zii.widgets.jui.*',
 	),
 
 	'modules'=>array(
@@ -76,7 +78,7 @@ return array(
 		),
 		*/
 		'db'=>array(
-			'connectionString' => 'pgsql:host=localhost;port=5432;dbname=SAAR',
+			'connectionString' => 'pgsql:host=localhost;port=5432;dbname=saar',
 			'emulatePrepare' => true,
 			'username' => 'saar',
 			'password' => '123456',
