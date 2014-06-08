@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Destino <?php echo $model->id; ?></h1>
+<h1>Modificar Destino <?php //echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

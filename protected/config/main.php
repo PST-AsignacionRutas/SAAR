@@ -26,6 +26,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 		'zii.widgets.jui.*',
+		'application.extensions.chosen.Chosen'
 	),
 
 	'modules'=>array(
@@ -48,6 +49,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'autoUpdateFlash' => false, 
 		),
 		'bootstrap'=>array(
 				'class'=>'bootstrap.components.Bootstrap',
@@ -93,7 +95,7 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, trace',
 				),
 				// uncomment the following to show log messages on web pages
 				/*

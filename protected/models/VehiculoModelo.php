@@ -49,8 +49,7 @@ class VehiculoModelo extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'vehiculos' => array(self::HAS_MANY, 'Vehiculo', 'id_modelo'),
-			'idMarca' => array(self::BELONGS_TO, 'VehiculoModelo', 'id_marca'),
-			'vehiculoModelos' => array(self::HAS_MANY, 'VehiculoModelo', 'id_marca'),
+			'idMarca' => array(self::BELONGS_TO, 'VehiculoMarca', 'id_marca'),
 		);
 	}
 

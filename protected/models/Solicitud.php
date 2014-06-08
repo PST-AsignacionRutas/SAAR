@@ -37,10 +37,12 @@ class Solicitud extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fecha_salida, fecha_llegada, id_destino, id_estatus_solicitud, solicitante', 'required'),
-			array('id_destino, id_estatus_solicitud', 'numerical', 'integerOnly'=>true),
+			array('fecha_salida, fecha_llegada, id_destino, id_estatus_solicitud, solicitante, responsable, n_personas, hora_salida, hora_llegada,', 'required'),
+			array('id_destino, id_estatus_solicitud, n_personas', 'numerical', 'integerOnly'=>true),
 			array('solicitante', 'length', 'max'=>256),
-			array('hora_salida, hora_llegada, lugar_encuentro', 'safe'),
+			array('responsable', 'length', 'max'=>256),
+			array('n_personas', 'length', 'max'=>3),
+			array('hora_salida, hora_llegada, lugar_encuentro, lugar_encuentro_llegada, observaciones, recorrido', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, fecha_salida, fecha_llegada, hora_salida, hora_llegada, lugar_encuentro, id_destino, id_estatus_solicitud, solicitante', 'safe', 'on'=>'search'),
@@ -57,7 +59,7 @@ class Solicitud extends CActiveRecord
 		return array(
 			'idDestino' => array(self::BELONGS_TO, 'Destino', 'id_destino'),
 			'idEstatusSolicitud' => array(self::BELONGS_TO, 'EstatusSolicitud', 'id_estatus_solicitud'),
-			'rutaAsignadas' => array(self::HAS_MANY, 'RutaAsignada', 'id_solicitud'),
+			'rutaAsignadas' => array(self::HAS_ONE, 'RutaAsignada', 'id_solicitud'),
 		);
 	}
 
@@ -67,21 +69,29 @@ class Solicitud extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Identificador único de la solicitud',
+			//'id' => 'Identificador único de la solicitud',
+			'id' => 'Nº de Solicitud',
 			//'fecha_salida' => 'Fecha probable de salida según solicitud',
-			'fecha_salida' => 'Fecha y hora de salida',
+			'fecha_salida' => 'Fecha de salida',
 			//'fecha_llegada' => 'Fecha probable de llegada según solicitud',
-			'fecha_llegada' => 'Fecha y hora de llegada',
-			'hora_salida' => 'Hora de salida estimada según solicitud',
-			'hora_llegada' => 'Hora de llegada según solicitud',
+			'fecha_llegada' => 'Fecha de llegada',
+			'hora_salida' => 'Hora de salida',
+			//'hora_salida' => 'Hora de salida estimada según solicitud',
+			'hora_llegada' => 'Hora de llegada',
+			//'hora_llegada' => 'Hora de llegada según solicitud',
 			//'lugar_encuentro' => 'Lugar de encuentro de los beneficiarios del servicio de ruta para la salida',
-			'lugar_encuentro' => 'Lugar de encuentro',
+			'lugar_encuentro' => 'Lugar de encuentro de salida',
 			//'id_destino' => 'Cláve foránea de la relación con la tabla destinos',
 			'id_destino' => 'Destino',
 			//'id_estatus_solicitud' => 'Cláve foránea de la relación con la tabla estatus_solicitud',
 			'id_estatus_solicitud' => 'Estatus',
 			//'solicitante' => 'Nombre de la persona o departamento solicitante',
 			'solicitante' => 'Departamento',
+			'responsable'=>'Responsable',
+			'lugar_encuentro_llegada' => 'Lugar de encuentro de llegada',
+			'n_personas'=> 'Nº de personas',
+			'observaciones'=> 'Motivo',
+			'recorrido'=> 'Recorrido del viaje',			
 		);
 	}
 
@@ -147,4 +157,13 @@ class Solicitud extends CActiveRecord
 		return EstatusSolicitud::model()->findAll();
     }
     
+    public function afterFind()
+	{
+		$this->hora_llegada = date("g:i A", strtotime($this->hora_llegada));
+		$this->hora_salida = date("g:i A", strtotime($this->hora_salida));
+		
+		$this->fecha_salida=Yii::app()->dateFormatter->format('dd-MM-yyyy',CDateTimeParser::parse($this->fecha_salida,"yyyy-MM-dd"));
+		$this->fecha_llegada=Yii::app()->dateFormatter->format('dd-MM-yyyy',CDateTimeParser::parse($this->fecha_llegada,"yyyy-MM-dd")); 
+		parent::afterFind();
+	}
 }

@@ -65,13 +65,17 @@ class SolicitudController extends Controller
 		$model=new Solicitud;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Solicitud']))
 		{
 			$model->attributes=$_POST['Solicitud'];
+			$model->id_estatus_solicitud = 1;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito una nueva Solicitud');
+				$this->redirect(array('create'));
+			}
 		}
 
 		$this->render('create',array(
@@ -89,13 +93,16 @@ class SolicitudController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Solicitud']))
 		{
 			$model->attributes=$_POST['Solicitud'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Actualizado!</strong> Se actualizó con éxito la información de la Solicitud');
+				$this->redirect(array('admin','action'=>'Modificar'));
+			}
 		}
 
 		$this->render('update',array(
@@ -137,6 +144,7 @@ class SolicitudController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Solicitud']))
 			$model->attributes=$_GET['Solicitud'];
+			//$model->id_estatus_solicitud = 1;
 
 		$this->render('admin',array(
 			'model'=>$model,

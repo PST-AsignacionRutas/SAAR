@@ -12,8 +12,8 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
+		<?php //echo $form->label($model,'id'); ?>
+		<?php //echo $form->textField($model,'id'); ?>
 	</div>
 
 	<div class="row">
@@ -37,8 +37,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'id_solicitud'); ?>
-		<?php echo $form->textField($model,'id_solicitud'); ?>
+		<?php //echo $form->label($model,'id_solicitud'); ?>
+		<?php //echo $form->textField($model,'id_solicitud'); ?>
 	</div>
 
 	<div class="row">
@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

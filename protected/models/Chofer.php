@@ -33,10 +33,11 @@ class Chofer extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, cedula, id_tipo_chofer, id_estatus_chofer', 'required'),
+			array('nombre, cedula, id_tipo_chofer, id_estatus_chofer', 'required', "message"=>"El campo no debe estar en blanco"),
 			array('id_tipo_chofer, id_estatus_chofer', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
 			array('cedula', 'length', 'max'=>16),
+			array('cedula', 'cedulaUnica', 'on'=>'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, cedula, id_tipo_chofer, id_estatus_chofer', 'safe', 'on'=>'search'),
@@ -89,11 +90,13 @@ class Chofer extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('cedula',$this->cedula,true);
-		$criteria->compare('id_tipo_chofer',$this->id_tipo_chofer);
-		$criteria->compare('id_estatus_chofer',$this->id_estatus_chofer);
+		//$criteria->with = array('idEstatusChofer');
+		//$criteria->compare('id_tipo_chofer',$this->id_tipo_chofer);
+		//$criteria->compare('idEstatusChofer.estatus','Activo', true);
+		//$criteria->compare('id_estatus_chofer',$this->id_estatus_chofer);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -120,4 +123,12 @@ class Chofer extends CActiveRecord
     {
 		return EstatusChofer::model()->findAll();
     }
+    
+    public function cedulaUnica($attribute, $params)
+    {
+		$existe = Chofer::model()->findByAttributes(array('cedula'=>$this->cedula));
+		//Yii::log('Cedula ' . $existe->nombre);
+		if ($existe!=null)
+			$this->addError('cedula', 'Este número de cédula ya se encuentra registrado');
+	}
 }

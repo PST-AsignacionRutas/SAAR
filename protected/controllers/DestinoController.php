@@ -65,13 +65,16 @@ class DestinoController extends Controller
 		$model=new Destino;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Destino']))
 		{
 			$model->attributes=$_POST['Destino'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito un nuevo Destino');
+				$this->redirect(array('create'));
+			}
 		}
 
 		$this->render('create',array(
@@ -89,13 +92,16 @@ class DestinoController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Destino']))
 		{
 			$model->attributes=$_POST['Destino'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Actualizado!</strong> Se actualizó con éxito la información del Destino');
+				$this->redirect(array('admin','action'=>'Modificar'));
+			}
 		}
 
 		$this->render('update',array(

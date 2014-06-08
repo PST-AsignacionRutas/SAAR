@@ -65,13 +65,16 @@ class VehiculoController extends Controller
 		$model=new Vehiculo;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Vehiculo']))
 		{
 			$model->attributes=$_POST['Vehiculo'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito un nuevo Vehículo');
+				$this->redirect(array('create'));
+			}
 		}
 
 		$this->render('create',array(
@@ -89,13 +92,16 @@ class VehiculoController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Vehiculo']))
 		{
 			$model->attributes=$_POST['Vehiculo'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Actualizado!</strong> Se actualizó con éxito la información del Vehículo');
+				$this->redirect(array('admin','action'=>'Modificar'));
+			}
 		}
 
 		$this->render('update',array(

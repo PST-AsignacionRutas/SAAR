@@ -34,6 +34,8 @@ class Destino extends CActiveRecord
 			array('nombre, id_tipo_destino', 'required'),
 			array('id_tipo_destino', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
+			array('nombre', 'destinoUnico', 'on'=>'insert'),
+			array('nombre', 'unsafe', 'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, id_tipo_destino', 'safe', 'on'=>'search'),
@@ -114,4 +116,12 @@ class Destino extends CActiveRecord
     {
 		return TipoDestino::model()->findAll();
     }
+    
+    public function destinoUnico($attribute, $params)
+    {
+		$existe = Destino::model()->findByAttributes(array('nombre'=>$this->nombre));
+		//Yii::log('Cedula ' . $existe->nombre);
+		if ($existe!=null)
+			$this->addError('nombre', 'Este Destino ya se encuentra registrado');
+	}
 }

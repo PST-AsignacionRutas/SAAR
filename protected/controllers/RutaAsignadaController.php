@@ -32,7 +32,7 @@ class RutaAsignadaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update', 'listasolicitudes', 'asignaractividades'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -140,6 +140,89 @@ class RutaAsignadaController extends Controller
 
 		$this->render('admin',array(
 			'model'=>$model,
+		));
+	}
+	
+	/**
+	 * Lista las solicitudes que están sin asignar para que puedan
+	 *  ser asignadas
+	 * 
+	 */
+	public function actionListaSolicitudes()
+	{
+		$model=new Solicitud('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+			$model->id_estatus_solicitud = 1;
+
+		$this->render('listaSolicitudes',array(
+			'model'=>$model,
+		));
+	}
+	
+	/**
+	 * Crea una asignación de vehículos según solicitud
+	 * para la programación de actividades diarias
+	 * 
+	 */
+	public function actionAsignarActividades($id_solicitud)
+	{
+		
+		$solicitud=Solicitud::model()->findByPk($id_solicitud);
+		if($solicitud===null)
+			throw new CHttpException(404,'La Solicitud no existe.');
+		/*$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+		*/
+		$model=new RutaAsignada;
+		if(Yii::app()->request->isPostRequest)
+		{
+			
+			$transaction = Yii::app()->db->beginTransaction();
+			try 
+			{
+				$model->id_solicitud = $solicitud->id;
+				$model->save();
+				
+				$solicitud->id_estatus_solicitud = 2;	
+				$solicitud->save();
+				
+				$postVehiculos = $_POST['vehiculos'];
+				// Se debe validar que vehiculos no se nulo
+				foreach($postVehiculos as $v)
+				{
+					$vra = new VehiculoRutaAsignada();
+					$vra->id_vehiculo = $v;
+					$vra->id_ruta_asignada = $model->id;
+					$vra->save();					
+				}
+				
+				$postChoferes = $_POST['choferes'];
+				// Se debe validar que choferes no se nulo
+				foreach($postChoferes as $c)
+				{
+					$cra = new ChoferRutaAsignada();
+					$cra->id_chofer = $v;
+					$cra->id_ruta_asignada = $model->id;
+					$cra->save();					
+				}
+				$transaction->commit();
+				Yii::app()->user->setFlash('success', '<strong>¡Asignado!</strong> Se asignó una nueva ruta con éxito');
+				$this->redirect(array('listasolicitudes'));
+			}
+			catch (Exception $e)
+			{
+				$transaction->rollBack();
+				Yii::app()->user->setFlash('error', "{$e->getMessage()}");
+				$this->redirect(array('listasolicitudes'));
+			}
+		}		
+		
+			$this->render('asignarActividades',array(
+			'model'=>$model,
+			'solicitud'=>$solicitud,
 		));
 	}
 

@@ -65,15 +65,19 @@ class ChoferController extends Controller
 		$model=new Chofer;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Chofer']))
 		{
 			$model->attributes=$_POST['Chofer'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{
+				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito un nuevo Chofer');
+				$this->redirect(array('create'));
+			}
+			//Yii::app()->user->setFlash('error', '<strong>¡Falló!</strong> Ocurrió un error al registrar el chofer');
 		}
-
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -89,13 +93,16 @@ class ChoferController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Chofer']))
 		{
 			$model->attributes=$_POST['Chofer'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			{	
+				Yii::app()->user->setFlash('success', '<strong>¡Actualizado!</strong> Se actualizó con éxito la información de Chofer');	
+				$this->redirect(array('admin','action'=>'Modificar'));
+			}
 		}
 
 		$this->render('update',array(
@@ -111,7 +118,7 @@ class ChoferController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
+		//Yii::app()->user->setFlash('success', '<strong>¡Eliminado!</strong> Se eliminó con éxito la información de Chofer');
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

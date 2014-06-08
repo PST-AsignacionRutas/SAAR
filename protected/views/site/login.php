@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Autenticar</h1>
+<h1>Autenticar Usuario</h1>
 
 <p>Por favor complete el formulario con su información de usuario:</p>
 

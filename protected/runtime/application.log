@@ -1,551 +1,2221 @@
-2014/05/13 09:32:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
-HTTP_REFERER=http://localhost/saar/index.php?r=site/page&view=about
----
-2014/05/13 09:34:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/13 09:34:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/13 09:34:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/13 09:37:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/13 09:38:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/13 09:41:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  password authentication failed for user "saar"
-FATAL:  password authentication failed for user "saar"' in /usr/share/yii-framework/framework/db/CDbConnection.php:382
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
-#1 /usr/share/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
-#2 /usr/share/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
-#3 /usr/share/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
-#4 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
-#5 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
-#6 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Solicitud))
-#7 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(65): CActiveRecord->__construct()
-#9 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#10 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#11 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#12 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#13 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#14 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#16 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#18 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#19 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#20 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#21 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#22 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 10:03:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('chofer/create?r...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=chofer/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/index.php?r=site/login
----
-2014/05/16 10:18:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('chofer/create?r...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=chofer/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/
----
-2014/05/16 11:27:45 [error] [exception.CException] exception 'CException' with message 'La propiedad "Destino"."id_tipo_vehiculo" no se encuentra definida.' in /usr/share/yii-framework/framework/base/CComponent.php:130
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('id_tipo_vehicul...')
-#1 /usr/share/yii-framework/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('id_tipo_vehicul...')
-#2 /usr/share/yii-framework/framework/web/helpers/CHtml.php(1802): CHtml::resolveValue(Object(Destino), 'id_tipo_vehicul...')
-#3 /usr/share/yii-framework/framework/web/widgets/CActiveForm.php(847): CHtml::activeDropDownList(Object(Destino), 'id_tipo_vehicul...', Array, Array)
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/input/TbInputVertical.php(60): CActiveForm->dropDownList(Object(Destino), 'id_tipo_vehicul...', Array, Array)
-#5 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/input/TbInput.php(201): TbInputVertical->dropDownList()
-#6 /usr/share/yii-framework/framework/web/CBaseController.php(173): TbInput->run()
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbActiveForm.php(497): CBaseController->widget('bootstrap.widge...', Array)
-#8 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbActiveForm.php(112): TbActiveForm->inputRow('dropdownlist', Object(Destino), 'id_tipo_vehicul...', Array, Array)
-#9 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/destino/_form.php(32): TbActiveForm->dropDownListRow(Object(Destino), 'id_tipo_vehicul...', Array, Array)
-#10 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#11 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#12 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#13 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/destino/create.php(18): CController->renderPartial('_form', Array)
-#14 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#15 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#16 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#17 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#18 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/DestinoController.php(79): CController->render('create', Array)
-#19 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): DestinoController->actionCreate()
-#20 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#21 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#22 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#23 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#24 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#25 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#26 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#27 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#28 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#29 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('destino/create')
-#30 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#31 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#32 {main}
-REQUEST_URI=/saar/index.php?r=destino/create
----
-2014/05/16 11:55:51 [error] [exception.CException] exception 'CException' with message 'Solicitud y sus behaviors no tienen un método o closure llamado "getListaTipoDestino".' in /usr/share/yii-framework/framework/base/CComponent.php:266
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getListaTipoDes...', Array)
-#1 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(39): CActiveRecord->__call('getListaTipoDes...', Array)
-#2 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(39): Solicitud->getListaTipoDestino()
-#3 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#5 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#6 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#7 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#9 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#11 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#12 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#13 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#14 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#15 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#16 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#17 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#20 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#23 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#24 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#25 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 12:13:21 [error] [php] include(CJuiDatePicker.php): failed to open stream: No such file or directory (/usr/share/yii-framework/framework/YiiBase.php:427)
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): import()
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget()
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): SolicitudController->createWidget()
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(32): SolicitudController->widget()
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require()
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): SolicitudController->renderInternal()
-#6 /usr/share/yii-framework/framework/web/CController.php(869): SolicitudController->renderFile()
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): SolicitudController->renderPartial()
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require()
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): SolicitudController->renderInternal()
-#10 /usr/share/yii-framework/framework/web/CController.php(869): SolicitudController->renderFile()
-#11 /usr/share/yii-framework/framework/web/CController.php(782): SolicitudController->renderPartial()
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): SolicitudController->render()
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams()
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): SolicitudController->runAction()
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): SolicitudController->filterAccessControl()
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): SolicitudController->runActionWithFilters()
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): SolicitudController->run()
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CWebApplication->run()
-REQUEST_URI=/saar/index.php?r=solicitud/create
-in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (32)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.web.filters.CFilterChain] Running filter RutaAsignadaController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.db.ar.CActiveRecord] Solicitud.findByPk()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:09 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "solicitud" "t" WHERE "t"."id"=7 LIMIT 1
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "themeManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "clientScript" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (16)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (15)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idDestino
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idDestino"."id" AS "t1_c0", "idDestino"."nombre" AS "t1_c1", "idDestino"."id_tipo_destino" AS "t1_c2" FROM "destino" "idDestino"  WHERE ("idDestino"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] Vehiculo.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "vehiculo" "t" WHERE id_estatus_vehiculo=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idModelo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idModelo"."id" AS "t1_c0", "idModelo"."modelo" AS "t1_c1", "idModelo"."id_marca" AS "t1_c2" FROM "vehiculo_modelo" "idModelo"  WHERE ("idModelo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading VehiculoModelo.idMarca
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idMarca"."id" AS "t1_c0", "idMarca"."marca" AS "t1_c1" FROM "vehiculo_marca" "idMarca"  WHERE ("idMarca"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idTipoVehiculo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoVehiculo"."id" AS "t1_c0", "idTipoVehiculo"."tipo" AS "t1_c1" FROM "tipo_vehiculo" "idTipoVehiculo"  WHERE ("idTipoVehiculo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idModelo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idModelo"."id" AS "t1_c0", "idModelo"."modelo" AS "t1_c1", "idModelo"."id_marca" AS "t1_c2" FROM "vehiculo_modelo" "idModelo"  WHERE ("idModelo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading VehiculoModelo.idMarca
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idMarca"."id" AS "t1_c0", "idMarca"."marca" AS "t1_c1" FROM "vehiculo_marca" "idMarca"  WHERE ("idMarca"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idTipoVehiculo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoVehiculo"."id" AS "t1_c0", "idTipoVehiculo"."tipo" AS "t1_c1" FROM "tipo_vehiculo" "idTipoVehiculo"  WHERE ("idTipoVehiculo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] Solicitud.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (138)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "solicitud" "t" WHERE id_estatus_solicitud=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (138)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.rutaAsignadas
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "rutaAsignadas"."id" AS "t1_c0", "rutaAsignadas"."id_solicitud" AS "t1_c1" FROM "ruta_asignada" "rutaAsignadas"  WHERE ("rutaAsignadas"."id_solicitud"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading RutaAsignada.vehiculoRutaAsignadas
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (3)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "vehiculoRutaAsignadas"."id_vehiculo" AS "t1_c0", "vehiculoRutaAsignadas"."id_ruta_asignada" AS "t1_c1", "vehiculoRutaAsignadas"."id" AS "t1_c2" FROM "vehiculo_ruta_asignada" "vehiculoRutaAsignadas"  WHERE ("vehiculoRutaAsignadas"."id_ruta_asignada"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "assetManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (67)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (63)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "messages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (91)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (63)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] Chofer.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "chofer" "t" WHERE id_estatus_chofer=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (17)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/07 23:50:10 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (119)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:13 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:13 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:13 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:13 [trace] [system.web.filters.CFilterChain] Running filter RutaAsignadaController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.db.ar.CActiveRecord] Solicitud.findByPk()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "solicitud" "t" WHERE "t"."id"=7 LIMIT 1
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (172)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.CModule] Loading "themeManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.CModule] Loading "clientScript" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (16)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 11:52:15 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (15)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idDestino
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idDestino"."id" AS "t1_c0", "idDestino"."nombre" AS "t1_c1", "idDestino"."id_tipo_destino" AS "t1_c2" FROM "destino" "idDestino"  WHERE ("idDestino"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (39)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] Vehiculo.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "vehiculo" "t" WHERE id_estatus_vehiculo=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (130)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idModelo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idModelo"."id" AS "t1_c0", "idModelo"."modelo" AS "t1_c1", "idModelo"."id_marca" AS "t1_c2" FROM "vehiculo_modelo" "idModelo"  WHERE ("idModelo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading VehiculoModelo.idMarca
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idMarca"."id" AS "t1_c0", "idMarca"."marca" AS "t1_c1" FROM "vehiculo_marca" "idMarca"  WHERE ("idMarca"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idTipoVehiculo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoVehiculo"."id" AS "t1_c0", "idTipoVehiculo"."tipo" AS "t1_c1" FROM "tipo_vehiculo" "idTipoVehiculo"  WHERE ("idTipoVehiculo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idModelo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idModelo"."id" AS "t1_c0", "idModelo"."modelo" AS "t1_c1", "idModelo"."id_marca" AS "t1_c2" FROM "vehiculo_modelo" "idModelo"  WHERE ("idModelo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading VehiculoModelo.idMarca
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idMarca"."id" AS "t1_c0", "idMarca"."marca" AS "t1_c1" FROM "vehiculo_marca" "idMarca"  WHERE ("idMarca"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Vehiculo.idTipoVehiculo
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoVehiculo"."id" AS "t1_c0", "idTipoVehiculo"."tipo" AS "t1_c1" FROM "tipo_vehiculo" "idTipoVehiculo"  WHERE ("idTipoVehiculo"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] Solicitud.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (138)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "solicitud" "t" WHERE id_estatus_solicitud=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (138)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.rutaAsignadas
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "rutaAsignadas"."id" AS "t1_c0", "rutaAsignadas"."id_solicitud" AS "t1_c1" FROM "ruta_asignada" "rutaAsignadas"  WHERE ("rutaAsignadas"."id_solicitud"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading RutaAsignada.vehiculoRutaAsignadas
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (3)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "vehiculoRutaAsignadas"."id_vehiculo" AS "t1_c0", "vehiculoRutaAsignadas"."id_ruta_asignada" AS "t1_c1", "vehiculoRutaAsignadas"."id" AS "t1_c2" FROM "vehiculo_ruta_asignada" "vehiculoRutaAsignadas"  WHERE ("vehiculoRutaAsignadas"."id_ruta_asignada"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (168)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (55)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.CModule] Loading "assetManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (67)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (63)
+2014/06/08 11:52:16 [trace] [system.CModule] Loading "messages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (91)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/chosen/Chosen.php (179)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (63)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] Chofer.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "chofer" "t" WHERE id_estatus_chofer=:estatus
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (188)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.ar.CActiveRecord] lazy loading Chofer.idTipoChofer
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idTipoChofer"."id" AS "t1_c0", "idTipoChofer"."tipo" AS "t1_c1" FROM "tipo_chofer" "idTipoChofer"  WHERE ("idTipoChofer"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/RutaAsignada.php (192)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/_form.php (70)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/rutaAsignada/asignarActividades.php (48)
+2014/06/08 11:52:16 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (17)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 11:52:17 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (119)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/RutaAsignadaController.php (226)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.web.filters.CFilterChain] Running filter SolicitudController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (143)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (143)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (143)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (143)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (143)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "themeManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "clientScript" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (15)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_search.php (12)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (60)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] Solicitud.count()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM "solicitud" "t"
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] Solicitud.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "solicitud" "t" LIMIT 10
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "assetManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbButtonColumn.php (37)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (91)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbGridView.php (49)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "format" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idDestino
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idDestino"."id" AS "t1_c0", "idDestino"."nombre" AS "t1_c1", "idDestino"."id_tipo_destino" AS "t1_c2" FROM "destino" "idDestino"  WHERE ("idDestino"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idEstatusSolicitud
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idEstatusSolicitud"."id" AS "t1_c0", "idEstatusSolicitud"."estatus" AS "t1_c1" FROM "estatus_solicitud" "idEstatusSolicitud"  WHERE ("idEstatusSolicitud"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idDestino
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idDestino"."id" AS "t1_c0", "idDestino"."nombre" AS "t1_c1", "idDestino"."id_tipo_destino" AS "t1_c2" FROM "destino" "idDestino"  WHERE ("idDestino"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idEstatusSolicitud
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idEstatusSolicitud"."id" AS "t1_c0", "idEstatusSolicitud"."estatus" AS "t1_c1" FROM "estatus_solicitud" "idEstatusSolicitud"  WHERE ("idEstatusSolicitud"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idDestino
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idDestino"."id" AS "t1_c0", "idDestino"."nombre" AS "t1_c1", "idDestino"."id_tipo_destino" AS "t1_c2" FROM "destino" "idDestino"  WHERE ("idDestino"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.ar.CActiveRecord] lazy loading Solicitud.idEstatusSolicitud
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT "idEstatusSolicitud"."id" AS "t1_c0", "idEstatusSolicitud"."estatus" AS "t1_c1" FROM "estatus_solicitud" "idEstatusSolicitud"  WHERE ("idEstatusSolicitud"."id"=:ypl0)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/admin.php (112)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:33 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (17)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (151)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.web.filters.CFilterChain] Running filter SolicitudController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "themeManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (83)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (26)
 in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
-in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (79)
-2014/05/16 15:23:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/index.php?r=site/login
----
-2014/05/16 15:32:05 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.timepicker.timepicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /usr/share/yii-framework/framework/YiiBase.php:322
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SolicitudController), 'application.ext...', Array)
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(71): CBaseController->widget('application.ext...', Array)
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#6 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#11 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#26 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 15:39:58 [error] [exception.CException] exception 'CException' with message 'El alias "ext.jquery-ui-timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /usr/share/yii-framework/framework/YiiBase.php:322
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.jquery-ui-t...', true)
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SolicitudController), 'ext.jquery-ui-t...', Array)
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): CBaseController->createWidget('ext.jquery-ui-t...', Array)
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(74): CBaseController->widget('ext.jquery-ui-t...', Array)
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#6 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#11 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#26 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 15:41:32 [error] [exception.CException] exception 'CException' with message 'El alias "ext.jquery-ui-timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /usr/share/yii-framework/framework/YiiBase.php:322
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.jquery-ui-t...', true)
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SolicitudController), 'ext.jquery-ui-t...', Array)
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): CBaseController->createWidget('ext.jquery-ui-t...', Array)
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(74): CBaseController->widget('ext.jquery-ui-t...', Array)
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#6 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#11 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#26 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 15:47:10 [error] [exception.CException] exception 'CException' with message 'El alias "ext.jquery-ui-timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /usr/share/yii-framework/framework/YiiBase.php:322
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.jquery-ui-t...', true)
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SolicitudController), 'ext.jquery-ui-t...', Array)
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): CBaseController->createWidget('ext.jquery-ui-t...', Array)
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(74): CBaseController->widget('ext.jquery-ui-t...', Array)
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#6 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#11 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#26 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 16:31:15 [error] [exception.CException] exception 'CException' with message 'El alias "ext.jquery-ui-timepicker.BJuiDateTimePicker" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in /usr/share/yii-framework/framework/YiiBase.php:322
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CWidgetFactory.php(146): YiiBase::import('ext.jquery-ui-t...', true)
-#1 /usr/share/yii-framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(SolicitudController), 'ext.jquery-ui-t...', Array)
-#2 /usr/share/yii-framework/framework/web/CBaseController.php(172): CBaseController->createWidget('ext.jquery-ui-t...', Array)
-#3 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(74): CBaseController->widget('ext.jquery-ui-t...', Array)
-#4 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#6 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#7 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#9 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#10 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#11 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#12 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#13 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#14 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#15 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#16 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#17 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#18 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#19 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#20 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#21 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#22 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#23 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#24 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#25 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#26 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/16 16:31:34 [error] [exception.CException] exception 'CException' with message 'La propiedad "Solicitud"."date_from" no se encuentra definida.' in /usr/share/yii-framework/framework/base/CComponent.php:130
-Stack trace:
-#0 /usr/share/yii-framework/framework/db/ar/CActiveRecord.php(145): CComponent->__get('date_from')
-#1 /usr/share/yii-framework/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('date_from')
-#2 /usr/share/yii-framework/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Solicitud), 'date_from')
-#3 /usr/share/yii-framework/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Solicitud), 'date_from', Array)
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/timepicker/BJuiDateTimePicker.php(73): CHtml::activeTextField(Object(Solicitud), 'date_from', Array)
-#5 /usr/share/yii-framework/framework/web/CBaseController.php(173): BJuiDateTimePicker->run()
-#6 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php(74): CBaseController->widget('ext.timepicker....', Array)
-#7 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#8 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#9 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#10 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php(18): CController->renderPartial('_form', Array)
-#11 /usr/share/yii-framework/framework/web/CBaseController.php(126): require('/home/capsulane...')
-#12 /usr/share/yii-framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home/capsulane...', Array, true)
-#13 /usr/share/yii-framework/framework/web/CController.php(869): CBaseController->renderFile('/home/capsulane...', Array, true)
-#14 /usr/share/yii-framework/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
-#15 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php(79): CController->render('create', Array)
-#16 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): SolicitudController->actionCreate()
-#17 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
-#18 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#19 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
-#20 /usr/share/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
-#21 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#22 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#23 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
-#24 /usr/share/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#25 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create')
-#26 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#27 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#28 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#29 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create
----
-2014/05/19 10:16:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/index.php?r=site/login
----
-2014/05/19 11:26:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/index.php?r=site/login
----
-2014/05/19 13:15:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "create?r=site" solicitada.' in /usr/share/yii-framework/framework/web/CController.php:483
-Stack trace:
-#0 /usr/share/yii-framework/framework/web/CController.php(270): CController->missingAction('create?r=site')
-#1 /usr/share/yii-framework/framework/web/CWebApplication.php(282): CController->run('create?r=site')
-#2 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('solicitud/creat...')
-#3 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#4 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/saar/index.php?r=solicitud/create?r=site/page&view=about
-HTTP_REFERER=http://localhost/saar/index.php?r=site/login
----
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (83)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "clientScript" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbAlert.php (135)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (37)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/TbActiveForm.php (437)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/input/TbInput.php (330)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php (89)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "assetManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (81)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (83)
+2014/06/08 12:06:41 [trace] [system.db.ar.CActiveRecord] Destino.findAll()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/Solicitud.php (148)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (202)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/Solicitud.php (148)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (202)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/Solicitud.php (148)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (202)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/Solicitud.php (148)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (202)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM "destino" "t"
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/models/Solicitud.php (148)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/_form.php (202)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/views/solicitud/create.php (18)
+2014/06/08 12:06:41 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (17)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column1.php (7)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (83)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.web.filters.CFilterChain] Running filter SolicitudController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:13 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:09:14 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (177)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (68)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "log" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "request" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "urlManager" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.web.filters.CFilterChain] Running filter SolicitudController.filteraccessControl()
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "user" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "session" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.CModule] Loading "db" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:58 [trace] [system.db.CDbCommand] Querying SQL: SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN (1)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (65)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)
+2014/06/08 12:11:59 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (177)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/SolicitudController.php (68)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/index.php (13)

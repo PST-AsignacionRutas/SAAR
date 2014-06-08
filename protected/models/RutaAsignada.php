@@ -36,12 +36,15 @@ class RutaAsignada extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fecha_salida, fecha_llegada, id_solicitud, id_destino', 'required'),
+			/*array('fecha_salida, fecha_llegada, id_solicitud, id_destino', 'required'),
 			array('id_solicitud, id_destino', 'numerical', 'integerOnly'=>true),
-			array('hora_salida, hora_llegada', 'safe'),
+			array('hora_salida, hora_llegada', 'safe'),*/
+			array('id_solicitud', 'required'),
+			array('id_solicitud', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, fecha_salida, fecha_llegada, hora_salida, hora_llegada, id_solicitud, id_destino', 'safe', 'on'=>'search'),
+			//array('id, fecha_salida, fecha_llegada, hora_salida, hora_llegada, id_solicitud, id_destino', 'safe', 'on'=>'search'),
+			array('id, id_solicitud', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,12 +70,12 @@ class RutaAsignada extends CActiveRecord
 	{
 		return array(
 			'id' => 'Identificador único de la ruta asignada',
-			'fecha_salida' => 'Fecha de salida',
+			'id_solicitud' => 'Cláve foránea de la relación con la tabla solicitudes',
+			/*'fecha_salida' => 'Fecha de salida',
 			'fecha_llegada' => 'Fecha de llegada',
 			'hora_salida' => 'Hora de salida',
 			'hora_llegada' => 'Hora de llegada',
-			'id_solicitud' => 'Cláve foránea de la relación con la tabla solicitudes',
-			'id_destino' => 'Cláve foránea de la relación con la tabla destinos',
+			'id_destino' => 'Cláve foránea de la relación con la tabla destinos',*/
 		);
 	}
 
@@ -95,12 +98,14 @@ class RutaAsignada extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_solicitud',$this->id_solicitud);
+		/*
 		$criteria->compare('fecha_salida',$this->fecha_salida,true);
 		$criteria->compare('fecha_llegada',$this->fecha_llegada,true);
 		$criteria->compare('hora_salida',$this->hora_salida,true);
 		$criteria->compare('hora_llegada',$this->hora_llegada,true);
-		$criteria->compare('id_solicitud',$this->id_solicitud);
-		$criteria->compare('id_destino',$this->id_destino);
+		
+		$criteria->compare('id_destino',$this->id_destino);*/
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -117,4 +122,76 @@ class RutaAsignada extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getListaVehiculos($solicitud)
+    {
+		//Se debe filtrar por el estatus de vehículo
+		// e incluso se puede filtrar por los que están disponibles de acuerdo a la solicitud
+		$vehiculos = Vehiculo::model()->findAll('id_estatus_vehiculo=:estatus', array(':estatus' => 1));
+		 
+		$lista = array();
+		foreach($vehiculos as $v) 
+		{
+			$lista[$v->id] = $v->numero." ".$v->placa." ".$v->idModelo->idMarca->marca." ".$v->idModelo->modelo." ".$v->idTipoVehiculo->tipo;
+		}
+		
+		$solicitudes = Solicitud::model()->findAll('id_estatus_solicitud=:estatus', array(':estatus'=>2));
+		$sFechaSalida = date('Y-m-d', strtotime($solicitud->fecha_salida));
+		$sFechaLlegada = date('Y-m-d', strtotime($solicitud->fecha_llegada));
+		$sHoraSalida = strtotime($solicitud->hora_salida);
+		$sHoraLlegada = strtotime($solicitud->hora_llegada);
+		$vOcupados = array();
+		foreach($solicitudes as $s)
+		{	
+			$vFechaSalida = date('Y-m-d', strtotime($s->fecha_salida));
+			$vFechaLlegada = date('Y-m-d', strtotime($s->fecha_llegada));
+			if (((($sFechaSalida > $vFechaSalida) && ($sFechaSalida < $vFechaLlegada))
+			|| (($sFechaLlegada > $vFechaSalida) && ($sFechaLlegada < $vFechaLlegada))
+			|| (($vFechaSalida > $sFechaSalida) && ($vFechaSalida < $sFechaLlegada))
+			|| (($vFechaLlegada > $sFechaSalida) && ($vFechaLlegada < $sFechaLlegada))
+			))			
+			{
+				foreach($s->rutaAsignadas->vehiculoRutaAsignadas as $v)
+				{
+					$vOcupados[$v->id_vehiculo] = $v->id_vehiculo;
+				}
+			}
+			
+			$vHoraSalida = strtotime($s->hora_salida);
+			$vHoraLlegada = strtotime($s->hora_llegada);
+			if (($sFechaSalida = $vFechaSalida) && ($sFechaLlegada = $vFechaLlegada)
+			&& ((($sHoraSalida >= $vHoraSalida) && ($sHoraSalida <= $vHoraLlegada))
+			|| (($sHoraLlegada >= $vHoraSalida) && ($sHoraLlegada <= $vHoraLlegada))
+			|| (($vHoraSalida >= $sHoraSalida) && ($vHoraSalida <= $sHoraLlegada))
+			|| (($vHoraLlegada >= $sHoraSalida) && ($vHoraLlegada <= $sHoraLlegada))))
+			{
+				foreach($s->rutaAsignadas->vehiculoRutaAsignadas as $v)
+				{
+					$vOcupados[$v->id_vehiculo] = $v->id_vehiculo;
+				}
+			}
+		}
+		
+		foreach($vOcupados as $vId)
+		{
+			unset($lista[$vId]);
+		}
+		//print_r($vOcupados);
+		//exit(1);
+		return $lista;
+    }
+    
+    public function getListaChoferes($solicitud)
+    {
+		//Se debe filtrar por el estatus de vehículo
+		// e incluso se puede filtrar por los que están disponibles de acuerdo a la solicitud
+		$choferes = Chofer::model()->findAll('id_estatus_chofer=:estatus', array(':estatus' => 1));
+		 
+		$lista = array();
+		foreach ($choferes as $c) {
+			$lista[$c->id] = $c->cedula." ".$c->nombre." ".$c->idTipoChofer->tipo;
+		}
+		
+		return $lista;
+    }
 }

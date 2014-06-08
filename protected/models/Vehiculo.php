@@ -39,11 +39,17 @@ class Vehiculo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('placa, id_tipo_vehiculo, id_estatus_vehiculo, id_modelo', 'required'),
-			array('n_puestos, id_tipo_vehiculo, id_estatus_vehiculo, id_modelo', 'numerical', 'integerOnly'=>true),
+			array('placa, id_tipo_vehiculo, id_estatus_vehiculo, id_modelo, n_puestos', 'required', "message"=>"El campo no debe estar en blanco"),
+			array('n_puestos, id_tipo_vehiculo, id_estatus_vehiculo, id_modelo, anio, numero', 'numerical', 'integerOnly'=>true),
 			array('numero, placa', 'length', 'max'=>16),
 			array('serial_carroceria, color', 'length', 'max'=>32),
 			array('anio', 'length', 'max'=>4),
+			array('color', 'match',
+				'pattern' => '/^[a-zA-Z\s]+$/',
+				//'color' => 'color debe estar escrito en letras',
+			),
+			array('placa', 'placaUnica', 'on'=>'insert'),
+			array('placa', 'unsafe', 'on'=>'update'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, numero, placa, serial_carroceria, anio, color, n_puestos, id_tipo_vehiculo, id_estatus_vehiculo, id_modelo', 'safe', 'on'=>'search'),
@@ -153,7 +159,7 @@ class Vehiculo extends CActiveRecord
 	 * @return Lista de estatus de vehículos
 	 */
     public function getListaEstatusVehiculo()
-    {
+    {		
 		return EstatusVehiculo::model()->findAll();
     }
     
@@ -163,6 +169,33 @@ class Vehiculo extends CActiveRecord
 	 */
     public function getListaModeloVehiculo()
     {
-		return VehiculoModelo::model()->findAll();
+		$criterios = new CDbCriteria;
+		//$criterios->select="t.id, concat(t.modelo,'@',m.marca)as marcamodelo";
+		$criterios->select="t.id, t.modelo";
+		$criterios->with=array(
+					'idMarca' => array(
+                        'select' => 'marca',
+					),
+		);
+		//$criterios->together = true;
+		//$criterios->condition="id_marca = idMarca.id";
+		//$criterios->join=" INNER JOIN vehiculo_marca m on m.id=t.id_marca";
+		//$criterios->compare("t.id_dominio",$idDominio,true);
+		$marcamodelos = VehiculoModelo::model()->findAll($criterios);
+		 
+		$lista = array();
+		foreach ($marcamodelos as $mm) {
+			$lista[$mm->id] = $mm->idMarca->marca . '-' . $mm->modelo;
+		}
+		
+		return $lista;
     }
+    
+    public function placaUnica($attribute, $params)
+    {
+		$existe = Vehiculo::model()->findByAttributes(array('placa'=>$this->placa));
+		//Yii::log('Cedula ' . $existe->nombre);
+		if ($existe!=null)
+			$this->addError('placa', 'Esta placa ya se encuentra registrada');
+	}
 }
