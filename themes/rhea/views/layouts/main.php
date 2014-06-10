@@ -77,7 +77,10 @@
 							array('label'=>'Consultar', 'url'=>array('/solicitud/admin', 'action'=>'Consultar')),
 						)),						
 						array('label'=>'Gestionar Asignaciones', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
-							array('label'=>'Registrar', 'url'=>array('/RutaAsignada/listasolicitudes')),
+							array('label'=>'Registrar', /*'url'=>array('/RutaAsignada/listasolicitudes'),*/ 'items'=>array(
+								array('label'=>'Registrar actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudes')),
+								array('label'=>'Registrar ruta estudiantil', 'url'=>array('/RutaAsignada/asignarrutaestudiantil')),
+							)),
 							array('label'=>'Buscar', 'url'=>array('/RutaAsignada/admin')),
 						)),
 						array('label'=>'Reportes', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(

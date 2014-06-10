@@ -159,7 +159,7 @@ class RutaAsignada extends CActiveRecord
 			
 			$vHoraSalida = strtotime($s->hora_salida);
 			$vHoraLlegada = strtotime($s->hora_llegada);
-			if (($sFechaSalida = $vFechaSalida) && ($sFechaLlegada = $vFechaLlegada)
+			if (($sFechaSalida == $vFechaSalida) && ($sFechaLlegada == $vFechaLlegada)
 			&& ((($sHoraSalida >= $vHoraSalida) && ($sHoraSalida <= $vHoraLlegada))
 			|| (($sHoraLlegada >= $vHoraSalida) && ($sHoraLlegada <= $vHoraLlegada))
 			|| (($vHoraSalida >= $sHoraSalida) && ($vHoraSalida <= $sHoraLlegada))
@@ -192,6 +192,48 @@ class RutaAsignada extends CActiveRecord
 			$lista[$c->id] = $c->cedula." ".$c->nombre." ".$c->idTipoChofer->tipo;
 		}
 		
+		
+		$solicitudes = Solicitud::model()->findAll('id_estatus_solicitud=:estatus', array(':estatus'=>2));
+		$sFechaSalida = date('Y-m-d', strtotime($solicitud->fecha_salida));
+		$sFechaLlegada = date('Y-m-d', strtotime($solicitud->fecha_llegada));
+		$sHoraSalida = strtotime($solicitud->hora_salida);
+		$sHoraLlegada = strtotime($solicitud->hora_llegada);
+		$cOcupados = array();
+		foreach($solicitudes as $s)
+		{	
+			$cFechaSalida = date('Y-m-d', strtotime($s->fecha_salida));
+			$cFechaLlegada = date('Y-m-d', strtotime($s->fecha_llegada));
+			if (((($sFechaSalida > $cFechaSalida) && ($sFechaSalida < $cFechaLlegada))
+			|| (($sFechaLlegada > $cFechaSalida) && ($sFechaLlegada < $cFechaLlegada))
+			|| (($cFechaSalida > $sFechaSalida) && ($cFechaSalida < $sFechaLlegada))
+			|| (($cFechaLlegada > $sFechaSalida) && ($cFechaLlegada < $sFechaLlegada))
+			))			
+			{
+				foreach($s->rutaAsignadas->choferRutaAsignadas as $c)
+				{
+					$cOcupados[$c->id_chofer] = $c->id_chofer;
+				}
+			}
+			
+			$cHoraSalida = strtotime($s->hora_salida);
+			$cHoraLlegada = strtotime($s->hora_llegada);
+			if (($sFechaSalida == $cFechaSalida) && ($sFechaLlegada == $cFechaLlegada)
+			&& ((($sHoraSalida >= $cHoraSalida) && ($sHoraSalida <= $cHoraLlegada))
+			|| (($sHoraLlegada >= $cHoraSalida) && ($sHoraLlegada <= $cHoraLlegada))
+			|| (($cHoraSalida >= $sHoraSalida) && ($cHoraSalida <= $sHoraLlegada))
+			|| (($cHoraLlegada >= $sHoraSalida) && ($cHoraLlegada <= $sHoraLlegada))))
+			{
+				foreach($s->rutaAsignadas->choferRutaAsignadas as $c)
+				{
+					$cOcupados[$c->id_chofer] = $c->id_chofer;
+				}
+			}
+		}
+				
+		foreach($cOcupados as $cId)
+		{
+			unset($lista[$cId]);
+		}
 		return $lista;
     }
 }

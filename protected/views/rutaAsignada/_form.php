@@ -19,7 +19,7 @@
 
 	<?php //echo $form->errorSummary($model); ?>
 
-	<table style="width: 50%;">
+	<table >
 		<tr>
 		<td style="text-align: right;"><?php echo $form->labelEx($solicitud,'solicitante'); ?></td><td><?php echo $solicitud->solicitante; ?></td>
 		</tr>

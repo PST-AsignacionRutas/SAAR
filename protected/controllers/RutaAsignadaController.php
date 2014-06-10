@@ -32,7 +32,7 @@ class RutaAsignadaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'listasolicitudes', 'asignaractividades'),
+				'actions'=>array('create','update', 'listasolicitudes', 'asignaractividades', 'asignarrutaestudiantil'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -162,7 +162,7 @@ class RutaAsignadaController extends Controller
 	}
 	
 	/**
-	 * Crea una asignación de vehículos según solicitud
+	 * Crea una asignación de vehículos y choferes según solicitud
 	 * para la programación de actividades diarias
 	 * 
 	 */
@@ -226,6 +226,80 @@ class RutaAsignadaController extends Controller
 		));
 	}
 
+
+	/**
+	 * Crea una asignación de vehículos y choferes para
+	 * una ruta estudiantil
+	 * 
+	 */
+	public function actionAsignarRutaEstudiantil()
+	{
+		
+		//$solicitud=Solicitud::model()->findByPk($id_solicitud);
+		/*if($solicitud===null)
+			throw new CHttpException(404,'La Solicitud no existe.');*/
+			
+		/*$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+		*/
+		
+		$model=new Solicitud;
+		/*
+		if(Yii::app()->request->isPostRequest)
+		{
+			
+			$transaction = Yii::app()->db->beginTransaction();
+			try 
+			{
+			 	// Guardando datos de solicitud
+				$model->attributes=$_POST['Solicitud'];
+				
+				$model->solicitante = 'Departamento de Transporte';
+				$model->responsable = 'Departamento de Transporte';
+				$model->n_personas = '50';
+				$model->id_estatus_solicitud = 2;
+				$model->save();
+				
+				$solicitud->id_estatus_solicitud = 2;	
+				$solicitud->save();
+				
+				$postVehiculos = $_POST['vehiculos'];
+				// Se debe validar que vehiculos no se nulo
+				foreach($postVehiculos as $v)
+				{
+					$vra = new VehiculoRutaAsignada();
+					$vra->id_vehiculo = $v;
+					$vra->id_ruta_asignada = $model->id;
+					$vra->save();					
+				}
+				
+				$postChoferes = $_POST['choferes'];
+				// Se debe validar que choferes no se nulo
+				foreach($postChoferes as $c)
+				{
+					$cra = new ChoferRutaAsignada();
+					$cra->id_chofer = $v;
+					$cra->id_ruta_asignada = $model->id;
+					$cra->save();					
+				}
+				$transaction->commit();
+				Yii::app()->user->setFlash('success', '<strong>¡Asignado!</strong> Se asignó una nueva ruta con éxito');
+				$this->redirect(array('listasolicitudes'));
+			}
+			catch (Exception $e)
+			{
+				$transaction->rollBack();
+				Yii::app()->user->setFlash('error', "{$e->getMessage()}");
+				$this->redirect(array('listasolicitudes'));
+			}
+		}*/		
+		
+			$this->render('asignarRutaEstudiantil',array(
+			'model'=>$model,
+			//'solicitud'=>$solicitud,
+		));
+	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
