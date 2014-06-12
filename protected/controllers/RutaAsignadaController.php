@@ -32,7 +32,9 @@ class RutaAsignadaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'listasolicitudes', 'asignaractividades', 'asignarrutaestudiantil'),
+				'actions'=>array('create','update', 'listasolicitudes', 
+				'asignaractividades', 'asignarrutaestudiantil', 'ajaxlistavehiculos', 
+				'ajaxlistachoferes', 'listasolicitudesmodificar'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -155,8 +157,28 @@ class RutaAsignadaController extends Controller
 		if(isset($_GET['Solicitud']))
 			$model->attributes=$_GET['Solicitud'];
 			$model->id_estatus_solicitud = 1;
+			$model->tipo_solicitud = 0;
 
 		$this->render('listaSolicitudes',array(
+			'model'=>$model,
+		));
+	}
+	
+	/**
+	 * Lista las solicitudes que están asignadas para que puedan
+	 *  ser modificadas
+	 * 
+	 */
+	public function actionListaSolicitudesModificar()
+	{
+		$model=new Solicitud('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+			$model->id_estatus_solicitud = 2;
+			$model->tipo_solicitud = 0;
+
+		$this->render('listaSolicitudesModificar',array(
 			'model'=>$model,
 		));
 	}
@@ -234,71 +256,151 @@ class RutaAsignadaController extends Controller
 	 */
 	public function actionAsignarRutaEstudiantil()
 	{
+		$model = new Solicitud;
+		$rutaAsignada = new RutaAsignada;
+		$vehiculos = new VehiculoRutaAsignada;
+		$choferes = new ChoferRutaAsignada;
 		
-		//$solicitud=Solicitud::model()->findByPk($id_solicitud);
-		/*if($solicitud===null)
-			throw new CHttpException(404,'La Solicitud no existe.');*/
-			
-		/*$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Solicitud']))
-			$model->attributes=$_GET['Solicitud'];
-		*/
+		$this->performAjaxValidation(array($model, $vehiculos, $choferes));
 		
-		$model=new Solicitud;
-		/*
+		
 		if(Yii::app()->request->isPostRequest)
 		{
 			
 			$transaction = Yii::app()->db->beginTransaction();
 			try 
 			{
-			 	// Guardando datos de solicitud
+			 	// Llenando datos de solicitud
 				$model->attributes=$_POST['Solicitud'];
-				
-				$model->solicitante = 'Departamento de Transporte';
-				$model->responsable = 'Departamento de Transporte';
+				$model->solicitante = 'Coordinación de Transporte';
+				$model->responsable = 'Coordinación de Transporte';
 				$model->n_personas = '50';
 				$model->id_estatus_solicitud = 2;
-				$model->save();
+				$model->tipo_solicitud = 1; // Ruta Estudiantil, 
 				
-				$solicitud->id_estatus_solicitud = 2;	
-				$solicitud->save();
+				$postVehiculos = $_POST['VehiculoRutaAsignada'];
+				$postVehiculos = $postVehiculos['id_vehiculo'];
+				$vehiculos->id_ruta_asignada = $vehiculos->id_vehiculo = isset($postVehiculos[0])? 1:null;
 				
-				$postVehiculos = $_POST['vehiculos'];
-				// Se debe validar que vehiculos no se nulo
+				$postChoferes = $_POST['ChoferRutaAsignada'];
+				$postChoferes = $postChoferes['id_chofer'];
+				$choferes->id_ruta_asignada = $choferes->id_chofer = isset($postChoferes[0])? 1:null;
+				//print_r($model);
+				
+				// Validando datos 
+				$validate = $model->validate();
+				$validate = $vehiculos->validate() && $validate;
+				$validate = $choferes->validate() && $validate;
+				
+				if (!$validate)
+					throw new Exception();
+				
+				$model->save(false);
+				
+				// Llenando datos de la asignación
+				$rutaAsignada->id_solicitud = $model->id;
+				$rutaAsignada->save(false);
+				
+				
+				
 				foreach($postVehiculos as $v)
 				{
 					$vra = new VehiculoRutaAsignada();
 					$vra->id_vehiculo = $v;
-					$vra->id_ruta_asignada = $model->id;
-					$vra->save();					
+					$vra->id_ruta_asignada = $rutaAsignada->id;
+					$vra->save(false);					
 				}
 				
-				$postChoferes = $_POST['choferes'];
-				// Se debe validar que choferes no se nulo
+				
 				foreach($postChoferes as $c)
 				{
 					$cra = new ChoferRutaAsignada();
 					$cra->id_chofer = $v;
-					$cra->id_ruta_asignada = $model->id;
-					$cra->save();					
+					$cra->id_ruta_asignada = $rutaAsignada->id;
+					$cra->save(false);					
 				}
 				$transaction->commit();
 				Yii::app()->user->setFlash('success', '<strong>¡Asignado!</strong> Se asignó una nueva ruta con éxito');
-				$this->redirect(array('listasolicitudes'));
+				$this->redirect(array('asignarrutaestudiantil'));
 			}
 			catch (Exception $e)
 			{
 				$transaction->rollBack();
 				Yii::app()->user->setFlash('error', "{$e->getMessage()}");
-				$this->redirect(array('listasolicitudes'));
 			}
-		}*/		
+		}		
 		
-			$this->render('asignarRutaEstudiantil',array(
+		$this->render('asignarRutaEstudiantil',array(
 			'model'=>$model,
+			'vehiculos'=>$vehiculos,
+			'choferes'=>$choferes,
 			//'solicitud'=>$solicitud,
 		));
+	}
+	
+	/* Recibe un arreglo con los datos de fecha de entrada, fecha de salida, 
+     * hora de entrada, hora de salida para verificar la disponibilidad de 
+     * vehiculos 
+     **/
+    public function actionAjaxListaVehiculos()
+    {
+		if (Yii::app()->request->isAjaxRequest)
+		{
+            if (Yii::app()->request->isPostRequest)
+            {
+				$solicitud = new Solicitud;
+				$jsondata = trim(file_get_contents('php://input'));
+				$s = CJSON::decode($jsondata);
+				$solicitud->fecha_salida =  isset($s['fecha_salida'])?$s['fecha_salida']:null;
+				$solicitud->fecha_llegada = isset($s['fecha_llegada'])?$s['fecha_llegada']:null;
+				$solicitud->hora_salida = isset($s['hora_salida'])?$s['hora_salida']:null;
+				$solicitud->hora_llegada = isset($s['hora_llegada'])?$s['hora_llegada']:null;
+                //Yii::log(__METHOD__ . "HoraSalida ".$solicitud->fecha_salida."HoraLlegada ".$solicitud->fecha_llegada , "error");
+                $vehiculos = RutaAsignada::getListaVehiculos($solicitud);
+                
+                $option = sprintf("<option value=''></option>");
+               foreach($vehiculos as $id=>$v)
+                {
+					$option .= sprintf("<option value='%d'>%s</option>", $id, $v);
+					
+				}			
+                
+			}
+		}
+		echo $option;
+	}
+	
+	
+	/* Recibe un arreglo con los datos de fecha de entrada, fecha de salida, 
+     * hora de entrada, hora de salida para verificar la disponibilidad de 
+     * choferes 
+     **/
+    public function actionAjaxListaChoferes()
+    {
+		if (Yii::app()->request->isAjaxRequest)
+		{
+            if (Yii::app()->request->isPostRequest)
+            {
+				$solicitud = new Solicitud;
+				$jsondata = trim(file_get_contents('php://input'));
+				$s = CJSON::decode($jsondata);
+				$solicitud->fecha_salida =  isset($s['fecha_salida'])?$s['fecha_salida']:null;
+				$solicitud->fecha_llegada = isset($s['fecha_llegada'])?$s['fecha_llegada']:null;
+				$solicitud->hora_salida = isset($s['hora_salida'])?$s['hora_salida']:null;
+				$solicitud->hora_llegada = isset($s['hora_llegada'])?$s['hora_llegada']:null;
+                //Yii::log(__METHOD__ . "HoraSalida ".$solicitud->fecha_salida."HoraLlegada ".$solicitud->fecha_llegada , "error");
+                $vehiculos = RutaAsignada::getListaChoferes($solicitud);
+                
+                $option = sprintf("<option value=''></option>");
+               foreach($vehiculos as $id=>$v)
+                {
+					$option .= sprintf("<option value='%d'>%s</option>", $id, $v);
+					
+				}			
+                
+			}
+		}
+		echo $option;
 	}
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

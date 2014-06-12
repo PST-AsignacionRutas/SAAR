@@ -71,6 +71,7 @@ class SolicitudController extends Controller
 		{
 			$model->attributes=$_POST['Solicitud'];
 			$model->id_estatus_solicitud = 1;
+			$model->tipo_solicitud = 0; //Actividad Diaria
 			if($model->save())
 			{
 				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito una nueva Solicitud');
@@ -145,6 +146,7 @@ class SolicitudController extends Controller
 		if(isset($_GET['Solicitud']))
 			$model->attributes=$_GET['Solicitud'];
 			//$model->id_estatus_solicitud = 1;
+			$model->tipo_solicitud = 0; // Actividad Diaria
 
 		$this->render('admin',array(
 			'model'=>$model,

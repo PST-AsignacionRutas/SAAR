@@ -211,7 +211,11 @@
 	<?php echo $form->textAreaRow($model,'lugar_encuentro_llegada',
 								array('rows'=>2, 'cols'=>50, 
 								'hint'=>'Lugar de encuentro de los beneficiarios del servicio para la llegada')); ?>
-										
+	
+	<?php echo $form->textAreaRow($model,'motivo',
+								array('rows'=>2, 'cols'=>50, 
+								'hint'=>'Información adicional relacionada con la solicitud')); ?>
+																	
 	<?php echo $form->textAreaRow($model,'observaciones',
 								array('rows'=>2, 'cols'=>50, 
 								'hint'=>'Información adicional relacionada con la solicitud')); ?>

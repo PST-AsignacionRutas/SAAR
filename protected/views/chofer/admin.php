@@ -75,7 +75,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	//'template'=>"{update}",
 	'type'=>'striped bordered condensed',
 	'columns'=>array(
-		'id',
+		//'id',
 		'nombre',
 		'cedula',
 		//'id_tipo_chofer',

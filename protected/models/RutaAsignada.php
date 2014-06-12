@@ -125,8 +125,6 @@ class RutaAsignada extends CActiveRecord
 	
 	public function getListaVehiculos($solicitud)
     {
-		//Se debe filtrar por el estatus de vehículo
-		// e incluso se puede filtrar por los que están disponibles de acuerdo a la solicitud
 		$vehiculos = Vehiculo::model()->findAll('id_estatus_vehiculo=:estatus', array(':estatus' => 1));
 		 
 		$lista = array();
@@ -140,15 +138,17 @@ class RutaAsignada extends CActiveRecord
 		$sFechaLlegada = date('Y-m-d', strtotime($solicitud->fecha_llegada));
 		$sHoraSalida = strtotime($solicitud->hora_salida);
 		$sHoraLlegada = strtotime($solicitud->hora_llegada);
+		Yii::log(__METHOD__ . "FechaSalida ".$sFechaSalida."FechaLlegada ".$sFechaLlegada , "error");
+		Yii::log(__METHOD__ . "HoraSalida ".$sHoraSalida."HoraLlegada ".$sHoraLlegada , "error");
 		$vOcupados = array();
 		foreach($solicitudes as $s)
 		{	
 			$vFechaSalida = date('Y-m-d', strtotime($s->fecha_salida));
 			$vFechaLlegada = date('Y-m-d', strtotime($s->fecha_llegada));
-			if (((($sFechaSalida > $vFechaSalida) && ($sFechaSalida < $vFechaLlegada))
-			|| (($sFechaLlegada > $vFechaSalida) && ($sFechaLlegada < $vFechaLlegada))
-			|| (($vFechaSalida > $sFechaSalida) && ($vFechaSalida < $sFechaLlegada))
-			|| (($vFechaLlegada > $sFechaSalida) && ($vFechaLlegada < $sFechaLlegada))
+			if (((($sFechaSalida >= $vFechaSalida) && ($sFechaSalida <= $vFechaLlegada))
+			|| (($sFechaLlegada >= $vFechaSalida) && ($sFechaLlegada <= $vFechaLlegada))
+			|| (($vFechaSalida >= $sFechaSalida) && ($vFechaSalida <= $sFechaLlegada))
+			|| (($vFechaLlegada >= $sFechaSalida) && ($vFechaLlegada <= $sFechaLlegada))
 			))			
 			{
 				foreach($s->rutaAsignadas->vehiculoRutaAsignadas as $v)
@@ -203,10 +203,10 @@ class RutaAsignada extends CActiveRecord
 		{	
 			$cFechaSalida = date('Y-m-d', strtotime($s->fecha_salida));
 			$cFechaLlegada = date('Y-m-d', strtotime($s->fecha_llegada));
-			if (((($sFechaSalida > $cFechaSalida) && ($sFechaSalida < $cFechaLlegada))
-			|| (($sFechaLlegada > $cFechaSalida) && ($sFechaLlegada < $cFechaLlegada))
-			|| (($cFechaSalida > $sFechaSalida) && ($cFechaSalida < $sFechaLlegada))
-			|| (($cFechaLlegada > $sFechaSalida) && ($cFechaLlegada < $sFechaLlegada))
+			if (((($sFechaSalida >= $cFechaSalida) && ($sFechaSalida <= $cFechaLlegada))
+			|| (($sFechaLlegada >= $cFechaSalida) && ($sFechaLlegada <= $cFechaLlegada))
+			|| (($cFechaSalida >= $sFechaSalida) && ($cFechaSalida <= $sFechaLlegada))
+			|| (($cFechaLlegada >= $sFechaSalida) && ($cFechaLlegada <= $sFechaLlegada))
 			))			
 			{
 				foreach($s->rutaAsignadas->choferRutaAsignadas as $c)

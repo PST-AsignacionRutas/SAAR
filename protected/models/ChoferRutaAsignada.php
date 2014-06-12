@@ -57,7 +57,7 @@ class ChoferRutaAsignada extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_chofer' => 'Cláve foránea de la relación con la tabla choferes',
+			'id_chofer' => 'Choferes',
 			'id_ruta_asignada' => 'Cláve foránea de la relación con la tabla rutas_asignadas',
 			'id' => 'Identificador único de un registro en la tabla chofer_ruta_asignada',
 		);

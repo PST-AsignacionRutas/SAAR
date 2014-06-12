@@ -78,30 +78,35 @@
 						)),						
 						array('label'=>'Gestionar Asignaciones', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Registrar', /*'url'=>array('/RutaAsignada/listasolicitudes'),*/ 'items'=>array(
-								array('label'=>'Registrar actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudes')),
-								array('label'=>'Registrar ruta estudiantil', 'url'=>array('/RutaAsignada/asignarrutaestudiantil')),
+								array('label'=>'Actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudes')),
+								array('label'=>'Ruta estudiantil', 'url'=>array('/RutaAsignada/asignarrutaestudiantil')),
 							)),
-							array('label'=>'Buscar', 'url'=>array('/RutaAsignada/admin')),
+							array('label'=>'Modificar', /*'url'=>array('/RutaAsignada/admin')),*/ 'items'=>array(
+								array('label'=>'Actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudesmodificar')),
+								array('label'=>'Ruta estudiantil', 'url'=>array('/RutaAsignada/listarutaestudiantilmodificar')),
+							)),
 						)),
 						array('label'=>'Reportes', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
-							array('label'=>'Solicitudes de transporte', 'url'=>array('')),
-							array('label'=>'Asignación de rutas estudiantiles', 'url'=>array('')),
-							array('label'=>'Asignación de actividades diarias', 'url'=>array('')),
+							array('label'=>'Solicitudes de transporte', 'url'=>array('/reportes/reportesolicitudestransporte')),
+							array('label'=>'Planificación de rutas estudiantiles', 'url'=>array('/reportes/reporteplanificacionrutasestudiantiles')),
+							array('label'=>'Programación de actividades diarias', 'url'=>array('/reportes/reporteprogramacionactividadesdiarias')),
 							//array('label'=>'Asignación de transporte permanente', 'url'=>array('')),
 						)),
 						array('label'=>'','icon'=>'icon-cog','url'=>array('#'), 'linkOptions' => array('title'=>'Ajustes de Seguridad', 'rel'=>'tooltip'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Gestionar usuarios', 'url'=>array(''),'items'=>array(
-								array('label'=>'Registrar', 'url'=>array('')),
-								array('label'=>'Buscar', 'url'=>array('')),
+								array('label'=>'Registrar Usuario', 'url'=>array('/cruge/ui/usermanagementcreate')),
+								array('label'=>'Administrar Usuarios', 'url'=>array('/cruge/ui/usermanagementadmin')),
+								array('label'=>'Administrar Roles', 'url'=>array('/cruge/ui/rbaclistroles')),
+								array('label'=>'Asignar Rol a Usuario', 'url'=>array('/cruge/ui/rbacusersassignments'))
 							)),
 							array('label'=>'Respaldos', 'url'=>array('')),
 						)),
-						array('label'=>'Autenticar', 'icon'=>'icon-circle-arrow-right','url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+						array('label'=>'Autenticar', 'icon'=>'icon-circle-arrow-right','url'=>array('/cruge/ui/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'', 'icon'=>'icon-question-sign','linkOptions' => array('title'=>'Ayuda de SAAR', 'rel'=>'tooltip'),'url'=>array('#'),'items'=>array(
 							array('label'=>'Ayuda de SAAR', 'url'=>array('')),
 							array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
 						)),						
-						array('label'=>'('.Yii::app()->user->name.')', 'icon'=>'icon-off', 'linkOptions' => array('title'=>'Salir de SAAR', 'rel'=>'tooltip'),'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),			
+						array('label'=>'('.Yii::app()->user->name.')', 'icon'=>'icon-off', 'linkOptions' => array('title'=>'Salir de SAAR', 'rel'=>'tooltip'),'url'=>Yii::app()->user->ui->logoutUrl, 'visible'=>!Yii::app()->user->isGuest),			
 					),
 				),
 			),
@@ -123,6 +128,6 @@
 	</div><!-- footer -->
 
 </div><!-- page -->
-
+<?php echo Yii::app()->user->ui->displayErrorConsole(); ?>
 </body>
 </html>

@@ -18,7 +18,7 @@
 
 <?php 
 	$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id'=>'solicitud-form',
+    'id'=>'ruta-asignada-form',
     'type'=>'horizontal',
     'enableAjaxValidation'=>true,
     'enableClientValidation'=>true,
@@ -62,6 +62,7 @@
 							dateCheckout.setDate(dateCheckout.getDate() + 1);
 							$('#Solicitud_fecha_llegada').datepicker( 'option', 'minDate', dateCheckout);
 							$('#Solicitud_fecha_llegada').datepicker( 'setDate', dateCheckout);
+							$('#Solicitud_fecha_salida').trigger('change');
 					}",
                 ),                     // jquery plugin options
                 'htmlOptions'=>array('readonly'=>true, 'size'=>10, 'class'=>'input-small') // HTML options
@@ -118,6 +119,9 @@
 					'dateFormat'=>'dd-mm-yy',
 					'changeMonth'=>true,
 					'changeYear'=>true,
+					'onClose'=>"js: function( selectedDate ) {
+							$('#Solicitud_fecha_salida').trigger('change');
+					}",
                 ),                     // jquery plugin options
                 'htmlOptions'=>array('readonly'=>true, 'size'=>10, 'class'=>'input-small') // HTML options
         ));                             
@@ -180,20 +184,61 @@
 										array('empty' => 'Seleccione...',
 										'hint'=>'Seleccione el destino para la actividad')
 										); ?>
-										
-	<?php echo $form->textAreaRow($model,'lugar_encuentro',
-								array('rows'=>2, 'cols'=>50, 
-								'hint'=>'Lugar de encuentro de los beneficiarios del servicio para la salida')); ?>
-	
-	<?php echo $form->textAreaRow($model,'lugar_encuentro_llegada',
-								array('rows'=>2, 'cols'=>50, 
-								'hint'=>'Lugar de encuentro de los beneficiarios del servicio para la llegada')); ?>
-										
+									
 	<?php echo $form->textAreaRow($model,'observaciones',
 								array('rows'=>2, 'cols'=>50, 
 								'hint'=>'Información adicional relacionada con la solicitud')); ?>
 	
+	<div class="control-group">
+		<?php echo CHtml::label('Asignar Vehículo(s) <span class="required">*</span>', null,array('class'=>'control-label'));
+		//echo $form->labelEx($vehiculos,'id_vehiculo', array('class'=>'control-label'));
+		?>
+		<div class="controls">
+			<?php
+			echo Chosen::activeMultiSelect($vehiculos, 'id_vehiculo', RutaAsignada::getListaVehiculos($model),
+			array(
+				'data-placeholder' => 'Indique Nº, Placa, Marca, Modelo ó Tipo de Vehículo',
+				'class'=>'span8',
+				'options'=>array(
+					//'maxSelectedOptions' => 3,
+					'displaySelectedOptions' => true,
+					//'noResultsText' => 'No se encontraron vehículos'
+			)));
+			/* echo Chosen::multiSelect('vehiculos', array(), RutaAsignada::getListaVehiculos($model),
+			array(
+				'data-placeholder' => 'Indique Nº, Placa, Marca, Modelo ó Tipo de Vehículo',
+				'class'=>'span8',
+				'options'=>array(
+					//'maxSelectedOptions' => 3,
+					'displaySelectedOptions' => true,
+					//'noResultsText' => 'No se encontraron vehículos'
+			)));*/?>
+			<?php echo $form->error($vehiculos,'id_vehiculo'); ?>
+			<!-- <span style="display: none;" id="vehiculos_em_" class="help-inline error"></span> -->
+			<p class="help-block">Indique Nº, Placa, Marca, Modelo o Tipo de Vehículo</p>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<?php echo CHtml::label('Asignar Chofer(es) <span class="required">*</span>', null,array('class'=>'control-label'));?>
+			<div class="controls">
+			<?php echo Chosen::activeMultiSelect($choferes, 'id_chofer', RutaAsignada::getListaChoferes($model),
+			array(
+				'data-placeholder' => 'Indique Nº Cédula, Nombres, Apellidos, ó Tipo de Chofer',
+				'class'=>'span8',
+				'options'=>array(
+					//'maxSelectedOptions' => 3,
+					'displaySelectedOptions' => true,
+					//'noResultsText' => 'No se encontraron vehículos'
+			)));?>
+			<?php echo $form->error($choferes,'id_chofer'); ?>
+			<!-- <span style="display: none;" id="choferes_em_" class="help-inline error"></span> -->
+			<p class="help-block">Indique Nº Cédula, Nombres, Apellidos, ó Tipo de Chofer</p>
+		</div>
+	</div>
+		
 	<div class="form-actions">
+		
 		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Actualizar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>

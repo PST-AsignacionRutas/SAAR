@@ -145,17 +145,15 @@ class ChoferController extends Controller
 		if(isset($_GET['Chofer']))
 			$model->attributes=$_GET['Chofer'];
 
-		/*$this->render('admin',array(
+		$this->render('admin',array(
 			'model'=>$model,
-		));*/
+		));
 		
+		/*
 		$imprime = Yii::app()->ePdf->HTML2PDF();
-		$imprime->WriteHTML($this->renderPartial('imprime', /*array(
-			'model'=>$model,
-		)*/ compact('model'), true));
-		//$imprime->WriteHTML('<table><tr><td>Hello WORLD</td></tr></table>');
-		$imprime->Output('/tmp/choferes.pdf', EYiiPdf::OUTPUT_TO_BROWSER);
-		//$imprime->Output();
+		$imprime->WriteHTML($this->renderPartial('imprime',compact('model'), true));
+		
+		$imprime->Output('/tmp/choferes.pdf', EYiiPdf::OUTPUT_TO_BROWSER);*/
 	}
 
 	/**

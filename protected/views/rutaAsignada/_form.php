@@ -51,7 +51,7 @@
 		<td style="text-align: right;"><?php echo $form->labelEx($solicitud,'recorrido'); ?></td><td><?php echo $solicitud->recorrido; ?></td>
 		</tr>
 		<tr>
-		<td style="text-align: right;"><?php echo CHtml::label('Asignar Vehículo(s)', null);?></td>
+		<td style="text-align: right;"><?php echo CHtml::label('Asignar Vehículo(s) <span class="required">*</span>', null, array('class'=>'required'));?></td>
 		<td><?php echo Chosen::multiSelect('vehiculos', array(), RutaAsignada::getListaVehiculos($solicitud),
 			array(
 				'data-placeholder' => 'Indique Nº, Placa, Marca, Modelo ó Tipo de Vehículo',
@@ -66,7 +66,7 @@
 		</td>
 		</tr>
 		<tr>
-		<td style="text-align: right;"><?php echo CHtml::label('Asignar Chofer(es)', null);?></td>
+		<td style="text-align: right;"><?php echo CHtml::label('Asignar Chofer(es) <span class="required">*</span>', null, array('class'=>'required'));?></td>
 		<td><?php echo Chosen::multiSelect('choferes', array(), RutaAsignada::getListaChoferes($solicitud),
 			array(
 				'data-placeholder' => 'Indique Nº Cédula, Nombres, Apellidos, ó Tipo de Chofer',

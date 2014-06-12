@@ -1,5 +1,5 @@
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="container">
+<div class="container" style="box-shadow: none; border: 0px; background: none; margin: 0px;">
 	<div class="span-5">
 		<div id="sidebar">
 		<?php

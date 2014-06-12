@@ -42,7 +42,7 @@ class Solicitud extends CActiveRecord
 			array('solicitante', 'length', 'max'=>256),
 			array('responsable', 'length', 'max'=>256),
 			array('n_personas', 'length', 'max'=>3),
-			array('hora_salida, hora_llegada, lugar_encuentro, lugar_encuentro_llegada, observaciones, recorrido', 'safe'),
+			array('hora_salida, hora_llegada, lugar_encuentro, lugar_encuentro_llegada, observaciones, recorrido, motivo', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, fecha_salida, fecha_llegada, hora_salida, hora_llegada, lugar_encuentro, id_destino, id_estatus_solicitud, solicitante', 'safe', 'on'=>'search'),
@@ -90,8 +90,10 @@ class Solicitud extends CActiveRecord
 			'responsable'=>'Responsable',
 			'lugar_encuentro_llegada' => 'Lugar de encuentro de llegada',
 			'n_personas'=> 'Nº de personas',
-			'observaciones'=> 'Motivo',
-			'recorrido'=> 'Recorrido del viaje',			
+			'observaciones'=> 'Observaciones',
+			'motivo'=>'Motivo',
+			'recorrido'=> 'Recorrido del viaje',	
+			'tipo_solicitud'=>'Tipo de Solicitud'		
 		);
 	}
 
@@ -114,15 +116,29 @@ class Solicitud extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('fecha_salida',$this->fecha_salida,true);
-		$criteria->compare('fecha_llegada',$this->fecha_llegada,true);
+		
+		//$criteria->compare('to_char( fecha_salida,\'dd-mm-yyyy\' )',$this->fecha_salida,true);
+		//$criteria->compare('to_char( fecha_llegada,\'dd-mm-yyyy\' )',$this->fecha_llegada,true);
+		//Yii::log(__METHOD__ . "FechaSalida ".$this->fecha_salida."FechaLlegada ".$this->fecha_llegada , "error");
+		if ($this->fecha_salida != '')
+			$this->fecha_salida=Yii::app()->dateFormatter->format('yyyy-MM-dd',CDateTimeParser::parse($this->fecha_salida,"dd-MM-yyyy"));
+		else
+			$this->fecha_salida = '1900-01-01';
+		if ($this->fecha_llegada != '' )
+			$this->fecha_llegada=Yii::app()->dateFormatter->format('yyyy-MM-dd',CDateTimeParser::parse($this->fecha_llegada,"dd-MM-yyyy")); 
+		else
+			$this->fecha_llegada = '2100-01-01';
+		//Yii::log(__METHOD__ . "FechaSalida ".$this->fecha_salida."FechaLlegada ".$this->fecha_llegada , "error");
+		$criteria->addCondition('fecha_salida >= \''.$this->fecha_salida.'\'');
+		$criteria->addCondition('fecha_llegada <= \''.$this->fecha_llegada.'\'');
 		$criteria->compare('hora_salida',$this->hora_salida,true);
 		$criteria->compare('hora_llegada',$this->hora_llegada,true);
 		$criteria->compare('lugar_encuentro',$this->lugar_encuentro,true);
 		$criteria->compare('id_destino',$this->id_destino);
 		$criteria->compare('id_estatus_solicitud',$this->id_estatus_solicitud);
 		$criteria->compare('solicitante',$this->solicitante,true);
-
+		$criteria->compare('tipo_solicitud',$this->tipo_solicitud);
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -165,5 +181,27 @@ class Solicitud extends CActiveRecord
 		$this->fecha_salida=Yii::app()->dateFormatter->format('dd-MM-yyyy',CDateTimeParser::parse($this->fecha_salida,"yyyy-MM-dd"));
 		$this->fecha_llegada=Yii::app()->dateFormatter->format('dd-MM-yyyy',CDateTimeParser::parse($this->fecha_llegada,"yyyy-MM-dd")); 
 		parent::afterFind();
+	}
+	
+	public static function Vehiculos($vehiculos)
+	{
+		$r = '';
+		foreach($vehiculos as $v)
+		{
+			$r = $r.$v->idVehiculo->numero."<br />";
+		}
+		
+		return $r;
+	}
+	
+	public static function Choferes($choferes)
+	{
+		$r = '';
+		foreach($choferes as $c)
+		{
+			$r = $r.$c->idChofer->nombre."<br />";
+		}
+		
+		return $r;
 	}
 }

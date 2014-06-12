@@ -57,7 +57,7 @@ class VehiculoRutaAsignada extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_vehiculo' => 'Cláve foránea de la relación con la tabla vehiculos',
+			'id_vehiculo' => 'Vehiculos',
 			'id_ruta_asignada' => 'Cláve foránea de la relación con la tabla rutas_asignadas',
 			'id' => 'Identificador único de un registro en la tabla vehiculo_ruta_asignada',
 		);
