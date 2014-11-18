@@ -31,7 +31,7 @@ class Destino extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, id_tipo_destino', 'required'),
+			array('nombre, id_tipo_destino', 'required',"message"=>"El campo no debe estar en blanco"),
 			array('id_tipo_destino', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>256),
 			array('nombre', 'destinoUnico', 'on'=>'insert'),

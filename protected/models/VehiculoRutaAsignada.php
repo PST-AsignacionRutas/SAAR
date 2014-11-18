@@ -30,7 +30,7 @@ class VehiculoRutaAsignada extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_vehiculo, id_ruta_asignada', 'required'),
+			array('id_vehiculo, id_ruta_asignada', 'required',"message"=>"Asignar Vehículo(s) no puede estar vacío"),
 			array('id_vehiculo, id_ruta_asignada', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

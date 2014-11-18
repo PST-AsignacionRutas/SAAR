@@ -7,6 +7,14 @@
 <?php
 	$solicitantes = array();
 	$solicitantes['Coordinación de Transporte'] = 'Coordinación de Transporte';
+	$solicitantes['Dirección de Talento Humano'] = 'Dirección de Talento Humano';
+	$solicitantes['Dirección General Socioacadémica'] = 'Dirección General Socioacadémica';
+	$solicitantes['Dirección de Presupuesto'] = 'Dirección de Presupuesto';
+	$solicitantes['Dirección de Servicios Administrativos'] = 'Dirección de Servicios Administrativos';
+	$solicitantes['Rectorado'] = 'Rectorado';
+	$solicitantes['Vicerrectorado Académico'] = 'Vicerrectorado Académico';
+	$solicitantes['Vicerrectorado de Desarrollo Territorial'] = 'Vicerrectorado de Desarrollo Territorial';
+	$solicitantes['Secretaría General'] = 'Secretaría General';
 	
 	if ($model->isNewRecord)
 	{
@@ -82,6 +90,10 @@
 					'hourText'=> 'Hora',             // Define the locale text for "Hours"
 					'minuteText'=> 'Minutos',         // Define the locale text for "Minute"
 					'amPmText'=>['AM', 'PM'],
+					'onSelect'=>'js:tpStartSelect',
+					'onClose'=>"js: function(){ 
+						jQuery('#Solicitud_hora_llegada').timepicker('setTime', $('#Solicitud_hora_salida').timepicker('getTime'));
+					}"
 					//'defaultTime'=>'12:34',       // Define the locale text for periods
 					// custom hours and minutes
 					/*'hours'=>array(
@@ -198,7 +210,7 @@
 			echo Chosen::activeMultiSelect($vehiculos, 'id_vehiculo', RutaAsignada::getListaVehiculos($model),
 			array(
 				'data-placeholder' => 'Indique Nº, Placa, Marca, Modelo ó Tipo de Vehículo',
-				'class'=>'span8',
+				'class'=>'span6',
 				'options'=>array(
 					//'maxSelectedOptions' => 3,
 					'displaySelectedOptions' => true,
@@ -225,7 +237,7 @@
 			<?php echo Chosen::activeMultiSelect($choferes, 'id_chofer', RutaAsignada::getListaChoferes($model),
 			array(
 				'data-placeholder' => 'Indique Nº Cédula, Nombres, Apellidos, ó Tipo de Chofer',
-				'class'=>'span8',
+				'class'=>'span6',
 				'options'=>array(
 					//'maxSelectedOptions' => 3,
 					'displaySelectedOptions' => true,

@@ -33,7 +33,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p> -->
 
-<?php echo CHtml::link('Buscar','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Consultar','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -57,7 +57,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	//'template'=>"{asignar}",
 	'type'=>'striped bordered condensed',
 	'columns'=>array(
+		'id',
 		'solicitante',
+		'responsable',
 		/*array('name'=>'Fecha y hora de salida',
 			'value'=>'$data->fecha_salida . " " . $data->hora_salida'),
 		array('name'=>'Fecha y hora de llegada',

@@ -26,7 +26,7 @@
 		<?php echo $form->label($model,'placa'); ?>
 		<?php echo $form->textField($model,'placa',array('size'=>16,'maxlength'=>16)); ?>
 	</div>
-
+<!--
 	<div class="row">
 		<?php echo $form->label($model,'serial_carroceria'); ?>
 		<?php echo $form->textField($model,'serial_carroceria',array('size'=>32,'maxlength'=>32)); ?>
@@ -41,6 +41,7 @@
 		<?php echo $form->label($model,'color'); ?>
 		<?php echo $form->textField($model,'color',array('size'=>32,'maxlength'=>32)); ?>
 	</div>
+-->
 <!--
 	<div class="row">
 		<?php echo $form->label($model,'n_puestos'); ?>

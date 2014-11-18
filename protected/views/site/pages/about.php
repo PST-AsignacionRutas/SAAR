@@ -1,11 +1,13 @@
 <?php
 /* @var $this SiteController */
 
-$this->pageTitle=Yii::app()->name . ' - About';
+$this->pageTitle=Yii::app()->name . ' - Acerca de';
 $this->breadcrumbs=array(
-	'About',
+	'Acerca de',
 );
 ?>
-<h1>Acerca de</h1>
-
-<p>Acá va la información de soporte y créditos de SAAR</p>
+<html>
+<body>
+<img src ='images/acerca.png'>
+</body>
+</html>

@@ -34,7 +34,7 @@
 		<?php /*$this->widget('zii.widgets.CMenu',array(*/
 			$this->widget('bootstrap.widgets.TbNavbar', array(
 			'brand'=>'SAAR',
-			'brandUrl'=>array('/site/page', 'view'=>'about'),
+			'brandUrl'=>array('/site/page', 'view'=>'Bienvenida'),
 			'type'=>'', // null or 'inverse'
 			'collapse'=>true, // requires bootstrap-responsive.css
 			'fixed'=>'',
@@ -81,10 +81,11 @@
 								array('label'=>'Actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudes')),
 								array('label'=>'Ruta estudiantil', 'url'=>array('/RutaAsignada/asignarrutaestudiantil')),
 							)),
-							array('label'=>'Modificar', /*'url'=>array('/RutaAsignada/admin')),*/ 'items'=>array(
+							array('label'=>'Consultar', 'url'=>array('/RutaAsignada/admin')),
+							/*array('label'=>'Modificar', 'url'=>array('#')), 'items'=>array(
 								array('label'=>'Actividad diaria', 'url'=>array('/RutaAsignada/listasolicitudesmodificar')),
 								array('label'=>'Ruta estudiantil', 'url'=>array('/RutaAsignada/listarutaestudiantilmodificar')),
-							)),
+							)),*/
 						)),
 						array('label'=>'Reportes', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Solicitudes de transporte', 'url'=>array('/reportes/reportesolicitudestransporte')),
@@ -103,10 +104,10 @@
 						)),
 						array('label'=>'Autenticar', 'icon'=>'icon-circle-arrow-right','url'=>array('/cruge/ui/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'', 'icon'=>'icon-question-sign','linkOptions' => array('title'=>'Ayuda de SAAR', 'rel'=>'tooltip'),'url'=>array('#'),'items'=>array(
-							array('label'=>'Ayuda de SAAR', 'url'=>array('')),
+							array('label'=>'Ayuda de SAAR', 'url'=>('https://github.com/PST-AsignacionRutas/SAAR/wiki'), 'linkOptions' => array('target'=>'_blank')),
 							array('label'=>'Acerca de', 'url'=>array('/site/page', 'view'=>'about')),
 						)),						
-						array('label'=>'('.Yii::app()->user->name.')', 'icon'=>'icon-off', 'linkOptions' => array('title'=>'Salir de SAAR', 'rel'=>'tooltip'),'url'=>Yii::app()->user->ui->logoutUrl, 'visible'=>!Yii::app()->user->isGuest),			
+						array('icon'=>'icon-off', 'linkOptions' => array('title'=>'Salir de SAAR', 'rel'=>'tooltip'),'url'=>Yii::app()->user->ui->logoutUrl, 'visible'=>!Yii::app()->user->isGuest),			
 					),
 				),
 			),

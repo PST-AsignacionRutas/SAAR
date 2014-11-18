@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h2>Error <?php echo $code; ?></h2>
+<h3>Este usuario no tiene permisos para realizar esta acción</h3>
 
-<div class="error">
-<?php echo CHtml::encode($message); ?>
-</div>
+<!-- Error <?php //echo $code; ?> -->
+<!-- <div class="error">
+<?php //echo CHtml::encode($message); ?>
+</div> -->

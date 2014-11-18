@@ -28,17 +28,18 @@ class RutaAsignadaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','ajaxlistavehiculos', 
+				'ajaxlistachoferes'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update', 'listasolicitudes', 
 				'asignaractividades', 'asignarrutaestudiantil', 'ajaxlistavehiculos', 
-				'ajaxlistachoferes', 'listasolicitudesmodificar'),
+				'ajaxlistachoferes', 'listasolicitudesmodificar', 'admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -133,13 +134,27 @@ class RutaAsignadaController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	/*public function actionAdmin()
 	{
 		$model=new RutaAsignada('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['RutaAsignada']))
 			$model->attributes=$_GET['RutaAsignada'];
 
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+	*/
+	
+	public function actionAdmin()
+	{
+		$model=new Solicitud('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+		$model->id_estatus_solicitud = 1;
+		
 		$this->render('admin',array(
 			'model'=>$model,
 		));
@@ -156,9 +171,9 @@ class RutaAsignadaController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Solicitud']))
 			$model->attributes=$_GET['Solicitud'];
-			$model->id_estatus_solicitud = 1;
-			$model->tipo_solicitud = 0;
-
+		$model->id_estatus_solicitud = 1;
+		$model->tipo_solicitud = 0;
+		
 		$this->render('listaSolicitudes',array(
 			'model'=>$model,
 		));
@@ -201,7 +216,17 @@ class RutaAsignadaController extends Controller
 		$model=new RutaAsignada;
 		if(Yii::app()->request->isPostRequest)
 		{
-			
+			// Se verifica si se rechazó la solicitud
+			if (isset($_POST['rechazar']))
+			{
+				$solicitud->id_estatus_solicitud = 3;
+				if ($solicitud->save())
+					Yii::app()->user->setFlash('info', '<strong>¡Rechazada!</strong> Se rechazó la Solicitud');
+				else
+					Yii::app()->user->setFlash('error', '<strong>¡Error!</strong> No se pudo rechazar la Solicitud');
+				
+				$this->redirect(array('listasolicitudes'));
+			}
 			$transaction = Yii::app()->db->beginTransaction();
 			try 
 			{
@@ -226,12 +251,12 @@ class RutaAsignadaController extends Controller
 				foreach($postChoferes as $c)
 				{
 					$cra = new ChoferRutaAsignada();
-					$cra->id_chofer = $v;
+					$cra->id_chofer = $c;
 					$cra->id_ruta_asignada = $model->id;
 					$cra->save();					
 				}
 				$transaction->commit();
-				Yii::app()->user->setFlash('success', '<strong>¡Asignado!</strong> Se asignó una nueva ruta con éxito');
+				Yii::app()->user->setFlash('success', '<strong>¡Asignado!</strong> Se asignó una nueva actividad con éxito');
 				$this->redirect(array('listasolicitudes'));
 			}
 			catch (Exception $e)
@@ -315,7 +340,7 @@ class RutaAsignadaController extends Controller
 				foreach($postChoferes as $c)
 				{
 					$cra = new ChoferRutaAsignada();
-					$cra->id_chofer = $v;
+					$cra->id_chofer = $c;
 					$cra->id_ruta_asignada = $rutaAsignada->id;
 					$cra->save(false);					
 				}
@@ -429,4 +454,9 @@ class RutaAsignadaController extends Controller
 			Yii::app()->end();
 		}
 	}
+	/*
+	public function filters()
+	{
+		return array(array('CrugeAccessControlFilter'));
+	}*/
 }

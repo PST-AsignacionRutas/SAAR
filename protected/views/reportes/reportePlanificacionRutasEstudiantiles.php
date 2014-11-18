@@ -13,7 +13,7 @@
     'type'=>'horizontal',
     'enableAjaxValidation'=>true,
     'enableClientValidation'=>true,
-    'htmlOptions'=>array('class'=>'well'),
+    'htmlOptions'=>array('class'=>'well', 'target'=>'_blank'),
 	));
 ?>
 

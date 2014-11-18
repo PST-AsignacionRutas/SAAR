@@ -33,13 +33,13 @@
 		<?php echo $form->labelEx($model,'cedula', array('class'=>'control-label')); ?>
 		<div class="controls">
 		<?php
-		if ($model->isNewRecord):
+		//if ($model->isNewRecord):
 			$this->widget('CMaskedTextField', array(
 					'model' => $model,
 					//'value' => $model->isNewRecord ? $model->your_attribute_name : '',
 					'attribute' => 'cedula',
-					'mask' => 'N-MMmmmmm?m',
-					'charMap' => array('N'=>'[V,E]','M'=>'[1-9]','m'=>'[0-9]'),
+					'mask' => 'N-MXmmmmm?m',
+					'charMap' => array('N'=>'[V,E]','M'=>'[1-9]','X'=>'[0-9]','m'=>'[0-9]'),
 					'htmlOptions' => array('class'=>'span2', 'maxlength'=>16)
 					)
 			);
@@ -48,9 +48,9 @@
 		<?php echo $form->error($model,'cedula'); ?>
 		<p class="help-block">Cédula de identidad del chofer (requerido). Ejm: V-4258228</p>
 		<?php 	
-			else:
+			/*else:
 				echo $model->cedula;
-			endif;
+			endif;*/
 		?>
         </div> 
     </div>

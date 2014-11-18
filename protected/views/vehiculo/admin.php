@@ -53,7 +53,7 @@ You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&g
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>-->
 
-<?php echo CHtml::link('Buscar','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Consultar','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -78,11 +78,23 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		//'id',
 		'numero',
 		'placa',
+		
+		array('name'=>'id_tipo_vehiculo',
+			//'header'=>'Destino',
+			'value'=>'$data->idTipoVehiculo->tipo'),
+		'n_puestos',
+		array('name'=>'Marca',
+			//'header'=>'Destino',
+			'value'=>'$data->idModelo->idMarca->marca'),
+		array('name'=>'Modelo',
+			//'header'=>'Destino',
+			'value'=>'$data->idModelo->modelo'),
+		
+		
+		/*
 		'serial_carroceria',
 		'anio',
-		'color',
-		/*
-		'n_puestos',
+		'color',		
 		'id_tipo_vehiculo',
 		'id_estatus_vehiculo',
 		'id_modelo',

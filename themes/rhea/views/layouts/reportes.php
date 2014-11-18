@@ -11,18 +11,27 @@
 <!--mpdf
  <htmlpageheader name="myheader">
  <table width="100%"><tr>
- <td width="20%"></td>
- <td width="70%"><span style="font-size: 10pt;">
-<center>
-Universidad Nacional Experimental SUR del Lago<br />
+ <td width="100%"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/reportes.jpg"></td></tr>
+ </table>
+<table style="margin-left: 35%;">
+<tr>
+ <td>
+ <center>
+  Universidad Nacional Experimental Sur del Lago<br />
 "Jesús María Semprum"<br />
 <b>SECRETARIA GENERAL</b> <br />
 COORDINACIÓN DE TRANSPORTE <br /><br />
 </center>
- </span></td>
+ </td>
+<td style="text-align: right; width: 50%">
+
+<img src="<?php echo Yii::app()->request->baseUrl;?>/images/logo.png">
+
+
+</td>
+</tr>
+</table>
  
- <td width="10%" style="text-align: right;"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"></td>
- </tr></table>
  </htmlpageheader>
  
 <htmlpagefooter name="myfooter">
@@ -39,6 +48,8 @@ www.unesur.edu.ve<br />
 <sethtmlpageheader name="myheader" value="on" show-this-page="1" />
  <sethtmlpagefooter name="myfooter" value="on" />
  mpdf-->
+ <br />
+ <br />
  <br />
  <br />
  <br />

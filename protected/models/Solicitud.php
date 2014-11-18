@@ -37,7 +37,7 @@ class Solicitud extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fecha_salida, fecha_llegada, id_destino, id_estatus_solicitud, solicitante, responsable, n_personas, hora_salida, hora_llegada,', 'required'),
+			array('fecha_salida, fecha_llegada, id_destino, id_estatus_solicitud, solicitante, responsable, n_personas, hora_salida, hora_llegada,', 'required',"message"=>"El campo no debe estar en blanco"),
 			array('id_destino, id_estatus_solicitud, n_personas', 'numerical', 'integerOnly'=>true),
 			array('solicitante', 'length', 'max'=>256),
 			array('responsable', 'length', 'max'=>256),

@@ -30,14 +30,15 @@
 	<?php //echo $form->errorSummary($model); ?>
 
 	<?php
+	/*
 	if ($model->isNewRecord):
-		echo $form->textFieldRow($model, 'nombre', array('class'=>'span3','maxlength'=>256,
-								'hint'=>'Nombre del destino (requerido)')); 
 	else:
 		echo $form->textFieldRow($model, 'nombre', array('class'=>'span3','maxlength'=>256,
 								'hint'=>'Nombre del destino (requerido)',
 								'readonly'=>'readonly')); 
-	endif;
+	endif;*/
+	echo $form->textFieldRow($model, 'nombre', array('class'=>'span3','maxlength'=>256,
+								'hint'=>'Nombre del destino (requerido)')); 
 	?>
 	
 	

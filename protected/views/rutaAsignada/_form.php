@@ -55,7 +55,7 @@
 		<td><?php echo Chosen::multiSelect('vehiculos', array(), RutaAsignada::getListaVehiculos($solicitud),
 			array(
 				'data-placeholder' => 'Indique Nº, Placa, Marca, Modelo ó Tipo de Vehículo',
-				'class'=>'span8',
+				'class'=>'span6',
 				'options'=>array(
 					//'maxSelectedOptions' => 3,
 					'displaySelectedOptions' => true,
@@ -70,7 +70,7 @@
 		<td><?php echo Chosen::multiSelect('choferes', array(), RutaAsignada::getListaChoferes($solicitud),
 			array(
 				'data-placeholder' => 'Indique Nº Cédula, Nombres, Apellidos, ó Tipo de Chofer',
-				'class'=>'span8',
+				'class'=>'span6',
 				'options'=>array(
 					//'maxSelectedOptions' => 3,
 					'displaySelectedOptions' => true,
@@ -100,7 +100,12 @@
 	<div class="form-actions">
 		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Guardar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
-		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'danger', 'label'=>'Rechazar',
+		'htmlOptions' => array(
+			'name' => 'rechazar',
+			'id' => 'rechazar',
+			'value'=>'Rechazar',
+		),)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -1,5 +1,6 @@
 <div style="text-align: center;">
-<b>PLANIFICACIÓN DE RUTAS ESTUDIANTILES</b>
+<center>
+<b>PLANIFICACIÓN DE RUTAS ESTUDIANTILES</b></center>
 <div style="text-align: right; font-size: 8pt;">
 CT-005
 </div>

@@ -11,13 +11,13 @@ class SolicitudController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
+	/*public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
+	}*/
 
 	/**
 	 * Specifies the access control rules.
@@ -74,11 +74,29 @@ class SolicitudController extends Controller
 			$model->tipo_solicitud = 0; //Actividad Diaria
 			if($model->save())
 			{
-				Yii::app()->user->setFlash('success', '<strong>¡Registrado!</strong> Se registró con éxito una nueva Solicitud');
+				// Imprimiendo la Solicitud
+				$imprime = Yii::app()->ePdf->mpdf('utf-8', 'A4',10,'Arial',15, 
+                    15,
+                    16,
+                    16,
+                    9,
+                    9,
+                    'P');
+				$this->layout='//layouts/reportessolicitud';
+				$html = $this->render('imprimeSolicitud',compact('model'), true);
+				$imprime->WriteHTML($html);
+				$archivo = sprintf('SolicitudActividad%s.pdf',date('Y-m-d H:i:s'));
+				$pathReporte = sprintf(Yii::app()->basePath.'/../tmp/'.$archivo);
+				$urlReporte = sprintf(Yii::app()->request->baseUrl.'/tmp/'.$archivo);
+				$imprime->Output($pathReporte, EYiiPdf::OUTPUT_TO_FILE);
+				// Fin Imprimiendo
+				Yii::app()->user->setFlash('success',
+					'<strong>¡Registrado!</strong> Se registró con éxito una nueva Solicitud <br />
+					<a href="'.$urlReporte.'" target="_blank"><strong>Imprimir solicitud</strong></a>');
 				$this->redirect(array('create'));
 			}
 		}
-
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -179,5 +197,10 @@ class SolicitudController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function filters()
+	{
+		return array(array('CrugeAccessControlFilter'));
 	}
 }

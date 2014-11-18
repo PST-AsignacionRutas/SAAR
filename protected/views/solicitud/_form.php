@@ -7,7 +7,14 @@
 <?php
 	$solicitantes = array();
 	$solicitantes['Coordinación de Transporte'] = 'Coordinación de Transporte';
-	
+	$solicitantes['Dirección de Talento Humano'] = 'Dirección de Talento Humano';
+	$solicitantes['Dirección General Socioacadémica'] = 'Dirección General Socioacadémica';
+	$solicitantes['Dirección de Presupuesto'] = 'Dirección de Presupuesto';
+	$solicitantes['Dirección de Servicios Administrativos'] = 'Dirección de Servicios Administrativos';
+	$solicitantes['Rectorado'] = 'Rectorado';
+	$solicitantes['Vicerrectorado Académico'] = 'Vicerrectorado Académico';
+	$solicitantes['Vicerrectorado de Desarrollo Territorial'] = 'Vicerrectorado de Desarrollo Territorial';
+	$solicitantes['Secretaría General'] = 'Secretaría General';
 	if ($model->isNewRecord)
 	{
 		$model->hora_salida="8:00 AM";
@@ -99,11 +106,15 @@
 				// additional javascript options for the date picker plugin
 				'options'=>array(
 					'showPeriod'=>true,
-					'showLeadingZero'=>true,
+					'showLeadingZero'=>false,
 					// Localization
 					'hourText'=> 'Hora',             // Define the locale text for "Hours"
 					'minuteText'=> 'Minutos',         // Define the locale text for "Minute"
 					'amPmText'=>['AM', 'PM'],
+					'onSelect'=>'js:tpStartSelect',
+					'onClose'=>"js: function(){ 
+						jQuery('#Solicitud_hora_llegada').timepicker('setTime', $('#Solicitud_hora_salida').timepicker('getTime'));
+					}"
 					//'defaultTime'=>'12:34',       // Define the locale text for periods
 					// custom hours and minutes
 					/*'hours'=>array(
@@ -140,7 +151,9 @@
                 'attribute'=>'fecha_llegada', // Attribute name
                 //'mode'=>'datetime',                     // Use "time","date" or "datetime" (default)
                 'options'=>array(
-					'dateFormat'=>'d-mm-yy',
+					'dateFormat'=>'dd-mm-yy',
+					'changeMonth'=>true,
+					'changeYear'=>true,
                 ),                     // jquery plugin options
                 'htmlOptions'=>array('readonly'=>true, 'size'=>10, 'class'=>'input-small') // HTML options
         ));                             
@@ -164,7 +177,7 @@
 				// additional javascript options for the date picker plugin
 				'options'=>array(
 					'showPeriod'=>true,
-					'showLeadingZero'=>true,
+					'showLeadingZero'=>false,
 					// Localization
 					'hourText'=> 'Hora',             // Define the locale text for "Hours"
 					'minuteText'=> 'Minutos',         // Define the locale text for "Minute"

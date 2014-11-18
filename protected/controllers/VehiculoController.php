@@ -11,13 +11,13 @@ class VehiculoController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	public function filters()
+	/*public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
+	}*/
 
 	/**
 	 * Specifies the access control rules.
@@ -175,5 +175,10 @@ class VehiculoController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function filters()
+	{
+		return array(array('CrugeAccessControlFilter'));
 	}
 }

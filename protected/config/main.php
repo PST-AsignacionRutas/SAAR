@@ -54,20 +54,20 @@ return array(
 				//
 				'availableAuthMethods'=>array('default'),
 
-				'availableAuthModes'=>array('username','email'),
+				'availableAuthModes'=>array('username'),
 
                                 // url base para los links de activacion de cuenta de usuario
 				'baseUrl'=>'http://coco.com/',
 
 				 // NO OLVIDES PONER EN FALSE TRAS INSTALAR
-				 'debug'=>true,
-				 'rbacSetupEnabled'=>true,
-				 'allowUserAlways'=>true,
+				 'debug'=>false,
+				 'rbacSetupEnabled'=>false,
+				 'allowUserAlways'=>false,
 
 				// MIENTRAS INSTALAS..PONLO EN: false
 				// lee mas abajo respecto a 'Encriptando las claves'
 				//
-				'useEncryptedPassword' => false,
+				'useEncryptedPassword' => true,
 
 				// Algoritmo de la función hash que deseas usar
 				// Los valores admitidos están en: http://www.php.net/manual/en/function.hash-algos.php
@@ -82,9 +82,9 @@ return array(
 				//		'afterLoginUrl'=>array('/site/welcome'),  ( !!! no olvidar el slash inicial / )
 				//		'afterLogoutUrl'=>array('/site/page','view'=>'about'),
 				//
-				'afterLoginUrl'=>array('/site/page','view'=>'about'),
-				'afterLogoutUrl'=>null,
-				'afterSessionExpiredUrl'=>null,
+				'afterLoginUrl'=>array('/site/page','view'=>'Bienvenida'),
+				'afterLogoutUrl'=>array('/cruge/ui/login',),
+				'afterSessionExpiredUrl'=>array('/site/page','view'=>'Bienvenida'),
 
 				// manejo del layout con cruge.
 				//

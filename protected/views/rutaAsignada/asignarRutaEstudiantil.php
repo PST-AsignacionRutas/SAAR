@@ -56,6 +56,20 @@ $('#Solicitud_hora_llegada').bind('change',function(){
 });
 ");
 ?>
+
+<?php
+Yii::app()->clientScript->registerScript('time', "
+// when start time change, update minimum for end timepicker
+function tpStartSelect( time, endTimePickerInst ) {
+   jQuery('#Solicitud_hora_llegada').timepicker('option', {
+       minTime: {
+           hour: endTimePickerInst.hours,
+           minute: endTimePickerInst.minutes
+       }
+   });
+};
+");
+?>
 <h1>Registrar Asignación de Ruta Estudiantil</h1>
 
 <?php $this->renderPartial('_rutaEstudiantil', array('model'=>$model,'vehiculos'=>$vehiculos,
