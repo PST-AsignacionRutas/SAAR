@@ -1,9 +1,13 @@
 <div style="text-align: center;">
 <b>SOLICITUDES DE TRANSPORTE</b><br />
 </div>
+<?php
+$dP = $model->search();
+$dP->setPagination(false);
+?>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'solicitud-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dP,
 	'enablePagination' => false,
 	/*'filter'=>$model,*/
 	'template'=>"{items}",

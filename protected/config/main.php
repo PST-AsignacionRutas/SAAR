@@ -29,6 +29,7 @@ return array(
 		'application.extensions.chosen.Chosen',
 		'application.modules.cruge.components.*',
 		'application.modules.cruge.extensions.crugemailer.*',
+		'application.modules.auditTrail.models.AuditTrail',
 	),
 
 	'modules'=>array(
@@ -42,6 +43,11 @@ return array(
 			'generatorPaths'=>array(
                 'bootstrap.gii',
             ),
+		),
+		'auditTrail'=>array(
+			'userClass' => 'CrugeWebUser', // the class name for the user object
+			'userIdColumn' => 'id', // the column name of the primary key for the user
+			'userNameColumn' => 'username', // the column name of the primary key for the user
 		),
 		
 		'cruge'=>array(

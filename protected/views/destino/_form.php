@@ -52,6 +52,9 @@
 		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Actualizar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+									'label'=>'Cancelar',
+									'url'=>array('site/page', 'view'=>'Bienvenida'))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

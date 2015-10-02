@@ -30,7 +30,8 @@ class ReportesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'reportesolicitudestransporte','reporteplanificacionrutasestudiantiles', 'reporteprogramacionactividadesdiarias'),
+				'actions'=>array('create','update', 'reportesolicitudestransporte','reporteplanificacionrutasestudiantiles', 'reporteprogramacionactividadesdiarias',
+							'reportechoferes'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -41,6 +42,53 @@ class ReportesController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+	
+	public function actionReporteChoferes()
+	{
+		$model = new Chofer('search');
+		
+		if(isset($_POST['Chofer']))
+		{
+			$model->attributes=$_POST['Chofer'];
+			
+			$imprime = Yii::app()->ePdf->mpdf();
+			/*$css = file_get_contents(Yii::getPathOfAlias('webroot.css') . '/imprimir.css');
+			$imprime->WriteHTML($css, 1);*/
+			
+			$this->layout='//layouts/reportes';
+			$html = $this->render('imprimeChoferes',compact('model'), true);
+			$imprime->WriteHTML($html);
+			$imprime->Output('reporteListadoChoferes.pdf', EYiiPdf::OUTPUT_TO_BROWSER);
+		}
+		
+		$this->render('reporteChoferes',array(
+			'model'=>$model,
+		));
+	}
+	
+	
+	public function actionReporteVehiculos()
+	{
+		$model = new Vehiculo('search');
+		
+		if(isset($_POST['Vehiculo']))
+		{
+			$model->attributes=$_POST['Vehiculo'];
+			
+			$imprime = Yii::app()->ePdf->mpdf();
+			/*$css = file_get_contents(Yii::getPathOfAlias('webroot.css') . '/imprimir.css');
+			$imprime->WriteHTML($css, 1);*/
+			
+			$this->layout='//layouts/reportes';
+			$html = $this->render('imprimeVehiculos',compact('model'), true);
+			$imprime->WriteHTML($html);
+			$imprime->Output('reporteListadoVehiculos.pdf', EYiiPdf::OUTPUT_TO_BROWSER);
+		}
+		
+		$this->render('reporteVehiculos',array(
+			'model'=>$model,
+		));
 	}
 	
 	public function actionReporteSolicitudesTransporte()

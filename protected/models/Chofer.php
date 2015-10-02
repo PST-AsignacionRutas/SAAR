@@ -94,9 +94,9 @@ class Chofer extends CActiveRecord
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('cedula',$this->cedula,true);
 		//$criteria->with = array('idEstatusChofer');
-		//$criteria->compare('id_tipo_chofer',$this->id_tipo_chofer);
+		$criteria->compare('id_tipo_chofer',$this->id_tipo_chofer);
 		//$criteria->compare('idEstatusChofer.estatus','Activo', true);
-		//$criteria->compare('id_estatus_chofer',$this->id_estatus_chofer);
+		$criteria->compare('id_estatus_chofer',$this->id_estatus_chofer);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -130,5 +130,13 @@ class Chofer extends CActiveRecord
 		//Yii::log('Cedula ' . $existe->nombre);
 		if ($existe!=null)
 			$this->addError('cedula', 'Este número de cédula ya se encuentra registrado');
+	}
+	
+	public function behaviors()
+	{
+		return array(
+			'LoggableBehavior'=>
+				'application.modules.auditTrail.behaviors.LoggableBehavior',
+		);
 	}
 }

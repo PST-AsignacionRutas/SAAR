@@ -124,4 +124,12 @@ class Destino extends CActiveRecord
 		if ($existe!=null)
 			$this->addError('nombre', 'Este Destino ya se encuentra registrado');
 	}
+	
+	public function behaviors()
+	{
+		return array(
+			'LoggableBehavior'=>
+				'application.modules.auditTrail.behaviors.LoggableBehavior',
+		);
+	}
 }

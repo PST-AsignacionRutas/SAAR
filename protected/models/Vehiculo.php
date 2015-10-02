@@ -45,7 +45,11 @@ class Vehiculo extends CActiveRecord
 			array('serial_carroceria, color', 'length', 'max'=>32),
 			array('anio', 'length', 'max'=>4),
 			array('color', 'match',
-				'pattern' => '/^[a-zA-Z\s]+$/',
+				'pattern' => '/^[a-zA-Z0-9\s]+$/',
+				//'color' => 'color debe estar escrito en letras',
+			),
+			array('serial_carroceria, placa', 'match',
+				'pattern' => '/^([0-9A-Za-z-]+)$/',
 				//'color' => 'color debe estar escrito en letras',
 			),
 			array('placa', 'placaUnica', 'on'=>'insert'),
@@ -197,5 +201,13 @@ class Vehiculo extends CActiveRecord
 		//Yii::log('Cedula ' . $existe->nombre);
 		if ($existe!=null)
 			$this->addError('placa', 'Esta placa ya se encuentra registrada');
+	}
+	
+	public function behaviors()
+	{
+		return array(
+			'LoggableBehavior'=>
+				'application.modules.auditTrail.behaviors.LoggableBehavior',
+		);
 	}
 }

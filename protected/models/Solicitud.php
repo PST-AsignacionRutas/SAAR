@@ -141,6 +141,7 @@ class Solicitud extends CActiveRecord
 		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			//'pagination' => array('pageSize'=>$this->count()),
 		));
 	}
 
@@ -203,5 +204,13 @@ class Solicitud extends CActiveRecord
 		}
 		
 		return $r;
+	}
+	
+	public function behaviors()
+	{
+		return array(
+			'LoggableBehavior'=>
+				'application.modules.auditTrail.behaviors.LoggableBehavior',
+		);
 	}
 }

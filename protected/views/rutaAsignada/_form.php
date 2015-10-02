@@ -106,8 +106,17 @@
 			'id' => 'rechazar',
 			'value'=>'Rechazar',
 		),)); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+									'label'=>'Cancelar',
+									'url'=>array('site/page', 'view'=>'Bienvenida'))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
 
+
 </div><!-- form -->
+
+<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+								'label'=>'Listar',
+								'url'=>array('RutaAsignada/listasolicitudes'))); ?>
+

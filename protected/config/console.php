@@ -11,8 +11,15 @@ return array(
 
 	// application components
 	'components'=>array(
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+		),*/
+		'db'=>array(
+			'connectionString' => 'pgsql:host=localhost;port=5432;dbname=saar',
+			'emulatePrepare' => true,
+			'username' => 'saar',
+			'password' => '123456',
+			'charset' => 'utf8',
 		),
 		// uncomment the following to use a MySQL database
 		/*

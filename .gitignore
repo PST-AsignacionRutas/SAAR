@@ -3,4 +3,8 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
-*/assets/*
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+tmp/*

@@ -7,11 +7,15 @@ CT-005
 </div>
 <p>FECHA: del <?php echo $model->fecha_salida != '' ? $model->fecha_salida : "---";?> al <?php echo $model->fecha_llegada != '' ? $model->fecha_llegada : "---";?></p>
 
+<?php
+$dP = $model->search();
+$dP->setPagination(false);
+?>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'solicitud-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$dP,
 	'enablePagination' => false,
-	/*'filter'=>$model,*/
+	//'filter'=>$model,
 	'template'=>"{items}",
 	'type'=>'striped bordered condensed',
 	//'htmlOptions'=>array('class'=>'table-striped table-bordered table-condensed'),

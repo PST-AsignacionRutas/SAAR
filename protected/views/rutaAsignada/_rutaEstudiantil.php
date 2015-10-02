@@ -90,7 +90,7 @@
 					'hourText'=> 'Hora',             // Define the locale text for "Hours"
 					'minuteText'=> 'Minutos',         // Define the locale text for "Minute"
 					'amPmText'=>['AM', 'PM'],
-					'onSelect'=>'js:tpStartSelect',
+					//'onSelect'=>'js:tpStartSelect',
 					'onClose'=>"js: function(){ 
 						jQuery('#Solicitud_hora_llegada').timepicker('setTime', $('#Solicitud_hora_salida').timepicker('getTime'));
 					}"
@@ -133,6 +133,7 @@
 					'changeYear'=>true,
 					'onClose'=>"js: function( selectedDate ) {
 							$('#Solicitud_fecha_salida').trigger('change');
+							jQuery('#Solicitud_hora_llegada').val(jQuery('#Solicitud_hora_salida').val());
 					}",
                 ),                     // jquery plugin options
                 'htmlOptions'=>array('readonly'=>true, 'size'=>10, 'class'=>'input-small') // HTML options
@@ -162,6 +163,7 @@
 					'hourText'=> 'Hora',             // Define the locale text for "Hours"
 					'minuteText'=> 'Minutos',         // Define the locale text for "Minute"
 					'amPmText'=>['AM', 'PM'],       // Define the locale text for periods
+					'beforeShow'=>'js:tpEndSelect',
 					// custom hours and minutes
 					/*'hours'=>array(
 						'starts'=>'1',                // First displayed hour
@@ -254,6 +256,9 @@
 		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Actualizar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+									'label'=>'Cancelar',
+									'url'=>array('site/page', 'view'=>'Bienvenida'))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

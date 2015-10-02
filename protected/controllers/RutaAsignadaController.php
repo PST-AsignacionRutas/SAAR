@@ -11,13 +11,14 @@ class RutaAsignadaController extends Controller
 	/**
 	 * @return array action filters
 	 */
+	 /*
 	public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
+	}*/
 
 	/**
 	 * Specifies the access control rules.
@@ -35,7 +36,7 @@ class RutaAsignadaController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update', 'listasolicitudes', 
 				'asignaractividades', 'asignarrutaestudiantil', 'ajaxlistavehiculos', 
-				'ajaxlistachoferes', 'listasolicitudesmodificar', 'admin'),
+				'ajaxlistachoferes', 'listasolicitudesmodificar', 'admin', 'cancelar', 'cancelarsolicitud'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -153,11 +154,52 @@ class RutaAsignadaController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Solicitud']))
 			$model->attributes=$_GET['Solicitud'];
-		$model->id_estatus_solicitud = 1;
+		$model->id_estatus_solicitud = 2;
 		
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	/**
+	 * Lista las solicitudes que están asignadas para que puedan
+	 *  ser canceladas
+	 * 
+	 */
+	public function actionCancelar()
+	{
+		$model=new Solicitud('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Solicitud']))
+			$model->attributes=$_GET['Solicitud'];
+		$model->id_estatus_solicitud = 2;
+		$model->fecha_salida = '>'.date('Y-m-d');
+				
+		$this->render('cancelar',array(
+			'model'=>$model,
+		));
+	}
+	
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionCancelarSolicitud($id)
+	{
+		$solicitud=Solicitud::model()->findByPk($id);
+		if($solicitud===null)
+			throw new CHttpException(404,'La Solicitud no existe.');
+			
+		$solicitud->id_estatus_solicitud = 3;
+		if ($solicitud->save())
+			Yii::app()->user->setFlash('info', '<strong>¡Cancelada!</strong> Se canceló la Solicitud');
+		else
+			Yii::app()->user->setFlash('error', '<strong>¡Error!</strong> No se pudo cancelar la Solicitud');
+		
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('cancelar'));
 	}
 	
 	/**
@@ -173,6 +215,10 @@ class RutaAsignadaController extends Controller
 			$model->attributes=$_GET['Solicitud'];
 		$model->id_estatus_solicitud = 1;
 		$model->tipo_solicitud = 0;
+		if (empty($model->fecha_salida) || (date('Y-m-d',strtotime($model->fecha_salida)) < date('Y-m-d')))
+		{
+			$model->fecha_salida = '>'.date('d-m-Y');
+		};
 		
 		$this->render('listaSolicitudes',array(
 			'model'=>$model,
@@ -454,9 +500,9 @@ class RutaAsignadaController extends Controller
 			Yii::app()->end();
 		}
 	}
-	/*
+	
 	public function filters()
 	{
 		return array(array('CrugeAccessControlFilter'));
-	}*/
+	}
 }

@@ -6,7 +6,7 @@
 
 <div class="form">
 
-<?php 
+<?php
 	$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'vehiculo-form',
     'type'=>'horizontal',
@@ -24,25 +24,25 @@
         /*'alerts'=>array( // configurations per alert type
             'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
         ),*/
-    )); 
+    ));
 	?>
-	
+
 	<?php //echo $form->errorSummary($model); ?>
-	
+
 	<?php echo $form->textFieldRow($model, 'numero', array('class'=>'input-mini','maxlength'=>256,
 								'hint'=>'Número de identificación del vehículo')); ?>
-	
-	<?php 
+
+	<?php
 	if ($model->isNewRecord):
 		echo $form->textFieldRow($model, 'placa', array('class'=>'input-mini','maxlength'=>16,
-								'hint'=>'Placas identificadoras del vehículo ante el registro de Tránsito Terrestre (requerido)')); 
+								'hint'=>'Placas identificadoras del vehículo ante el registro de Tránsito Terrestre (requerido)'));
 	else:
 		echo $form->textFieldRow($model, 'placa', array('class'=>'span3','maxlength'=>16,
 								'hint'=>'Placas identificadoras del vehículo ante el registro de Tránsito Terrestre (requerido)',
-								'readonly'=>'readonly')); 
-	endif;							
+								'readonly'=>'readonly'));
+	endif;
 	?>
-	
+
 	<?php echo $form->textFieldRow($model, 'serial_carroceria', array('class'=>'span3','maxlength'=>16,
 								'hint'=>'Número serial de carrocería del vehículo')); ?>
 
@@ -51,9 +51,9 @@
 								'hint'=>'Año del modelo del vehículo')); ?>
 
 	<?php echo $form->textFieldRow($model, 'color', array('class'=>'span3','maxlength'=>32,
-								'hint'=>'Color principal del vehiculo')); ?>
+								'hint'=>'Color principal del vehículo')); ?>
 
-		
+
 	<?php echo $form->textFieldRow($model, 'n_puestos', array('class'=>'input-mini','maxlength'=>2,
 								'hint'=>'Número de puestos del vehículo')); ?>
 
@@ -71,8 +71,8 @@
 									$model->getListaModeloVehiculo(),
 									array('empty' => 'Seleccione...',
 									'hint'=>'Seleccione el modelo del vehículo (requerido)')); ?>
-	<?php //print_r(CHtml::listData($model->getListaModeloVehiculo(),'id','marca')); 
-		//print_r($model->getListaModeloVehiculo()); 
+	<?php //print_r(CHtml::listData($model->getListaModeloVehiculo(),'id','marca'));
+		//print_r($model->getListaModeloVehiculo());
 		//$modelo = $model->getListaModeloVehiculo();
 		//echo $modelo[0];
 	?>
@@ -80,6 +80,9 @@
 		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Actualizar'; ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+                <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+								'label'=>'Cancelar',
+								'url'=>array('site/page', 'view'=>'Bienvenida'))); ?>
 	</div>
 
 

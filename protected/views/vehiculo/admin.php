@@ -107,3 +107,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         ),
 	),
 )); ?>
+<div class="form-actions">
+		<center><?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+								'label'=>'Salir',
+								'url'=>array('site/page', 'view'=>'Bienvenida'))); ?> </center>
+</div>

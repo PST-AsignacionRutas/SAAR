@@ -102,6 +102,9 @@
 	
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Imprimir')); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+									'label'=>'Cancelar',
+									'url'=>array('site/page', 'view'=>'Bienvenida'))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

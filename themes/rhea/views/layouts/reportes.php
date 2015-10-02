@@ -55,7 +55,7 @@ www.unesur.edu.ve<br />
  <br />
  <br />
  <br />
- 
+ <br />
 <?php echo $content; ?> 
  
 </body>

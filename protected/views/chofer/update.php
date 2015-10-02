@@ -19,3 +19,6 @@ $this->menu=array(
 <h1>Modificar Chofer <?php //echo $model->nombre; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'link', 
+								'label'=>'Listar',
+								'url'=>array('chofer/admin','action'=>'Modificar'))); ?>

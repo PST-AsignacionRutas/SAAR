@@ -17,6 +17,7 @@
 		<?php echo $form->textField($model,'id'); ?>
 	</div>
 
+<?php if (!isset($cancelar) || $cancelar != true):?>
 	<div class="row">
 		<?php echo $form->label($model,'fecha_salida'); ?>
 		<?php echo $form->textField($model,'fecha_salida'); ?>
@@ -26,6 +27,7 @@
 		<?php echo $form->label($model,'fecha_llegada'); ?>
 		<?php echo $form->textField($model,'fecha_llegada'); ?>
 	</div>
+<?php endif;?>
 	
 	<div class="row">
 		<?php echo $form->label($model,'responsable'); ?>
